@@ -17,10 +17,4 @@ public class AdminNavbarNavigate {
                 Click.on(AdminPage.NAV_BTN_PROFILE_SETTINGS)
         );
     }
-
-    public static Performable toAddNewUser() {
-        return Task.where("{0} navigate to Add New User Page",
-                Click.on(AdminPage.BTN_ADD_USER)
-        );
-    }
 }
