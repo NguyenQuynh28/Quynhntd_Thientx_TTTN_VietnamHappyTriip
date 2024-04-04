@@ -9,7 +9,7 @@ public class WaitABit {
                 actor -> {
                     try {
                         Thread.sleep(second * 1000L);
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
