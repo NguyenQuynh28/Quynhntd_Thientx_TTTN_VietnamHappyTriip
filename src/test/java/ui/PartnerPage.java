@@ -57,4 +57,5 @@ public class PartnerPage {
             .locatedBy("//label[@for='route-schedules']//ancestor::div[contains(@class,'route-schedules')]");
     public static final Target CHK_CHOOSE_DAY = Target.the("Choose day")
             .locatedBy("//span[text()='{0}']");
+
 }

@@ -27,4 +27,5 @@ public class SignUpPage {
             .locatedBy("//input[@placeholder='Confirm your password']");
     public static final Target ERROR_CONFIRM_PASSWORD = Target.the("Error Confirm Password")
             .locatedBy("//strong[text()='Confirm Password is required']");
+
 }

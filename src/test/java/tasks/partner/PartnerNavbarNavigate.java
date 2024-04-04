@@ -11,7 +11,6 @@ public class PartnerNavbarNavigate {
                 Click.on(PartnerPage.NAV_BTN_NAVIGATE.of("Transport Management"))
         );
     }
-
     public static Performable toRouteManagement() {
         return Task.where("{0} navigate to Route Management",
                 Click.on(PartnerPage.NAV_BTN_NAVIGATE.of("Route Management"))

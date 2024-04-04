@@ -15,4 +15,5 @@ public class LoginPage {
     public static final Target BTN_LOGIN = Target.the("TextBox password")
             .located(By.xpath("//button[@type='submit']"));
 
+
 }

@@ -24,8 +24,7 @@ public class LoadConfig {
     }
 
     public static String getImagePath(String type) {
-        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.imagePath") + "BusStopImg" + type;
+        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.imagePath") + "BusStopIMG" + type;
     }
-
 
 }

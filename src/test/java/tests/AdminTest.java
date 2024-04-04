@@ -73,6 +73,7 @@ public class AdminTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
 
+
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
         //1.Navigate to Booking Confirmation page
