@@ -7,7 +7,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.targets.Target;
-import ui.PartnerPage;
 import untils.LoadConfig;
 
 import java.nio.file.Path;
@@ -27,9 +26,8 @@ public class Actions {
         );
     }
 
-    public static Performable upLoadIMG(Target target, String type){
+    public static Performable upLoadIMG(Target target, String type) {
         return Task.where("Upload image",
                 Upload.theFile(Path.of(LoadConfig.getImagePath(type))).to(target));
     }
-
 }

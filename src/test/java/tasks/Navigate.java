@@ -12,6 +12,7 @@ public class Navigate {
         );
     }
 
+
     public static Performable toLoginClientPage() {
         return Task.where("{0} navigate to client page",
                 Open.url(LoadConfig.getURLClient())

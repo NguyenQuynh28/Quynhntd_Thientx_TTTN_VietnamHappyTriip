@@ -1,6 +1,7 @@
 package ui;
 
 import net.serenitybdd.screenplay.targets.Target;
+
 public class SignUpPage {
     public static final Target TITLE_PARTNER_SIGN_UP = Target.the("Title Partner Sign up")
             .locatedBy("//h2[text()='PARTNER SIGN UP']");
@@ -26,5 +27,4 @@ public class SignUpPage {
             .locatedBy("//input[@placeholder='Confirm your password']");
     public static final Target ERROR_CONFIRM_PASSWORD = Target.the("Error Confirm Password")
             .locatedBy("//strong[text()='Confirm Password is required']");
-
 }

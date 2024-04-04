@@ -38,6 +38,7 @@ public class Login implements Performable {
             );
         }
 
+
         //Input data to username and password
         actor.attemptsTo(
                 Enter.theValue(LoadConfig.getUserName(auth)).into(LoginPage.TXT_USER_NAME),

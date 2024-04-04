@@ -47,4 +47,5 @@ public class AdminPage {
             .locatedBy("//div[@aria-label='Partner Management']");
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
             .locatedBy("//div[@aria-label='Route Management']");
+
 }

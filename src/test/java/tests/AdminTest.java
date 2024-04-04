@@ -67,9 +67,9 @@ public class AdminTest extends CommonTest {
                 PartnerRouteManagement.inputTime(PartnerPage.TXT_TIME.of("arrive-at"), "17:30"),
                 PartnerRouteManagement.inputDays("1"),
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("fromAt "), PartnerPage.LST_LIST, "Quang Nam Station"),
-                PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST,"Hoi An Station"),
-                PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST,"Bus 1"),
-                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY,"5"),
+                PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
+                PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 1"),
+                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "5"),
                 Click.on(PartnerPage.BTN_SAVE)
         );
 
@@ -79,9 +79,7 @@ public class AdminTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation()
         );
-
     }
-
 
     @Test
     @Tag("Test13")
