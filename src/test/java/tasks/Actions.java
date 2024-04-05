@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import ui.AdminPage;
 import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.targets.Target;
 import untils.LoadConfig;
@@ -18,7 +19,6 @@ public class Actions {
                 Enter.theValue(value).into(target)
         );
     }
-
     public static Performable chooseOption(Target target, Target targetList, String value) {
         return Task.where("{0} choose options",
                 Click.on(target),
