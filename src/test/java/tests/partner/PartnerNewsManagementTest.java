@@ -1,4 +1,4 @@
-package tests;
+package tests.partner;
 
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
@@ -13,12 +13,13 @@ import tasks.Actions;
 import tasks.Login;
 import tasks.partner.PartnerNavbarNavigate;
 import tasks.partner.PartnerNewsManagement;
+import tests.CommonTest;
 import ui.PartnerPage;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class PartnerTest extends CommonTest {
+public class PartnerNewsManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test164")
     @Title("Partner_Test164: Navigates to the “Add News” page")
