@@ -17,13 +17,13 @@ public class CommonTest {
     WebDriver adminBrowser;
 
     @Managed(driver = "edge")
-    WebDriver clientBrowser;
+    protected WebDriver clientBrowser;
 
     @CastMember(name = "Admin")
-    Actor admin;
+    protected Actor admin;
 
     @CastMember(name = "Partner/Passenger")
-    Actor client;
+    protected Actor client;
 
     @BeforeEach
     public void start() {

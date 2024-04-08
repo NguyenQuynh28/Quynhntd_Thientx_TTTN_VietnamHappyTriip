@@ -21,4 +21,5 @@ public class PartnerNavbarNavigate {
                 Click.on(PartnerPage.NAV_BTN_NEWS_MANAGEMENT)
         );
     }
+
 }
