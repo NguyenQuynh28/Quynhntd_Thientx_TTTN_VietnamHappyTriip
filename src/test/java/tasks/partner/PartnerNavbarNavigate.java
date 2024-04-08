@@ -17,7 +17,7 @@ public class PartnerNavbarNavigate {
         );
     }
     public static Performable toNewsManagement() {
-        return Task.where("{0} navigate to Route Management",
+        return Task.where("{0} navigate to News Management",
                 Click.on(PartnerPage.NAV_BTN_NEWS_MANAGEMENT)
         );
     }
