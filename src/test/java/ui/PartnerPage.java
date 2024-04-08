@@ -3,6 +3,7 @@ package ui;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class PartnerPage {
+
     public static final Target MESSAGE_SUCCESSFULLY = Target.the("Message successfully")
             .locatedBy("//div[@data-pc-section='detail']");
     public static final Target MESSAGE_DUPLICATE_ENTRY = Target.the("Message duplicate entry")
