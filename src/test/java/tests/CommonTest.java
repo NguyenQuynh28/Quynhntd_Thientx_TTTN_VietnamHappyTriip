@@ -33,6 +33,7 @@ public class CommonTest {
         when(admin).attemptsTo(Navigate.toLoginAdminPage());
         when(client).attemptsTo(Navigate.toLoginClientPage());
     }
+
     @AfterEach
     public void close() {
         adminBrowser.close();
