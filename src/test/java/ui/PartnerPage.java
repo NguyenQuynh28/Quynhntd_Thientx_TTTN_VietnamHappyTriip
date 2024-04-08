@@ -3,8 +3,12 @@ package ui;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class PartnerPage {
-    public static final Target NAV_BTN_NAVIGATE = Target.the("Button navigate")
-            .locatedBy("//div[@aria-label='{0}']");
+    public static final Target NAV_BTN_TRANSPORT_MANAGEMENT = Target.the("Button navigate to transport management")
+            .locatedBy("//div[@aria-label='Transport Management']");
+    public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
+            .locatedBy("//div[@aria-label='Route Management']");
+    public static final Target NAV_BTN_NEWS_MANAGEMENT = Target.the("Button navigate to news management")
+            .locatedBy("//div[@aria-label='News Management']");
     public static final Target TXT_NAME = Target.the("Text box name")
             .locatedBy("//input[@id='name']");
     public static final Target BTN_VEHICLE_TYPE = Target.the("Button vehicle type ")

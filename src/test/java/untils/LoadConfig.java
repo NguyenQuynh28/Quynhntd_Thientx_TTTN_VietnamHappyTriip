@@ -23,8 +23,8 @@ public class LoadConfig {
         return EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments." + auth + ".password");
     }
 
-    public static String getImagePath(String type) {
-        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.imagePath") + "BusStopIMG" + type;
+    public static String getImagePath(String type, String value) {
+        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.imagePath") + value + type;
     }
 
 }

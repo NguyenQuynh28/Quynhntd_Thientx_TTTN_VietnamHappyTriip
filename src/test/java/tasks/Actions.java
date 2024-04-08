@@ -25,8 +25,8 @@ public class Actions {
                 Click.on(targetList.of(value))
         );
     }
-    public static Performable upLoadIMG(Target target, String type) {
+    public static Performable upLoadIMG(Target target, String type, String value) {
         return Task.where("Upload image",
-                Upload.theFile(Path.of(LoadConfig.getImagePath(type))).to(target));
+                Upload.theFile(Path.of(LoadConfig.getImagePath(type, value))).to(target));
     }
 }
