@@ -21,4 +21,9 @@ public class AdminNavbarNavigate {
                 Click.on(AdminPage.BTN_ADD_USER)
         );
     }
+    public static Performable toRouteManagement() {
+        return Task.where("{0} navigate to Route Confirmation",
+                Click.on(AdminPage.NAV_BTN_ROUTE_MANAGEMENT)
+        );
+    }
 }
