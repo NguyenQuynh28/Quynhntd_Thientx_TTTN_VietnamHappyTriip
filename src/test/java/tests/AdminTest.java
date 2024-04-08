@@ -40,7 +40,7 @@ public class AdminTest extends CommonTest {
                 seeThat("The Booking Confirmation is displayed", the(AdminPage.TITLE_BOOKING_CONFIRMATION), isVisible())
         );
     }
-    
+
     @Test
     @Tag("Admin_Test02")
     @Title("Admin_Test02: The popup is displayed")
@@ -55,7 +55,7 @@ public class AdminTest extends CommonTest {
                 PartnerVehicleManagement.chooseVehicleType("Bus"),
                 PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),

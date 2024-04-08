@@ -3,8 +3,16 @@ package ui;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class PartnerPage {
-    public static final Target NAV_BTN_NAVIGATE = Target.the("Button navigate")
-            .locatedBy("//div[@aria-label='{0}']");
+    public static final Target MESSAGE_SUCCESSFULLY = Target.the("Message successfully")
+            .locatedBy("//div[@data-pc-section='detail']");
+    public static final Target MESSAGE_DUPLICATE_ENTRY = Target.the("Message duplicate entry")
+            .locatedBy("//div[@data-pc-section='detail']");
+    public static final Target TXT_SEARCH = Target.the("Textbox search")
+            .locatedBy("//input[contains(@placeholder,'Search')]");
+
+    //Transport Management
+    public static final Target NAV_BTN_TRANSPORT_MANAGEMENT = Target.the("Button navigate to transport management")
+            .locatedBy("//div[@aria-label='Transport Management']");
     public static final Target TXT_NAME = Target.the("Text box name")
             .locatedBy("//input[@id='name']");
     public static final Target BTN_VEHICLE_TYPE = Target.the("Button vehicle type ")
@@ -41,6 +49,10 @@ public class PartnerPage {
             .locatedBy("//label[text()='{0}']//ancestor::div[contains(@class,'field')]//p-checkbox");
     public static final Target BTN_SAVE = Target.the("Button save to transport")
             .locatedBy("//p-button[@type='submit']");
+
+    //Route Management
+    public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
+            .locatedBy("//div[@aria-label='Route Management']");
     public static final Target TXT_PRICE = Target.the("Text box price")
             .locatedBy("//input[@id='price']");
     public static final Target TXT_TIME = Target.the("Text box time")
@@ -57,4 +69,32 @@ public class PartnerPage {
             .locatedBy("//label[@for='route-schedules']//ancestor::div[contains(@class,'route-schedules')]");
     public static final Target CHK_CHOOSE_DAY = Target.the("Choose day")
             .locatedBy("//span[text()='{0}']");
+
+    //News Management
+    public static final Target NAV_BTN_NEWS_MANAGEMENT = Target.the("Button navigate to news management")
+            .locatedBy("//div[@aria-label='News Management']");
+    public static final Target BTN_ADD_NEWS = Target.the("Button add news")
+            .locatedBy("//p-button[@label='Add News']");
+    public static final Target TILTLE_ADD_NEWS = Target.the("Title Add News")
+            .locatedBy("//h4[text()='Add News']");
+    public static final Target TXT_TITLE = Target.the("Textbox title")
+            .locatedBy("//input[@placeholder='Enter news title']");
+    public static final Target TXT_DESCRIPTION = Target.the("Textbox description")
+            .locatedBy("//div[@class='ql-editor ql-blank']");
+    public static final Target TXT_DESCRIPTION_UPDATE = Target.the("Textbox description")
+            .locatedBy("//div[@class='ql-editor']");
+    public static final Target BTN_SAVE_NEWS = Target.the("Button save News")
+            .locatedBy("//button[@type='submit']");
+    public static final Target BTN_CANCEL_NEWS = Target.the("Button cancel News")
+            .locatedBy("//span[text()='Cancel']");
+    public static final Target ERROR_MESSAGE_NEWS = Target.the("Error message News")
+            .locatedBy("//label[contains(text(),'{0}')]//parent::div//small");
+    public static final Target LBL_NEWS = Target.the("Label News")
+            .locatedBy("//li[@aria-label='{0}']");
+    public static final Target MESSAGE_SEARCH_NEWS= Target.the("Message [No results found]")
+            .locatedBy("//li[text()=' No results found ']");
+    public static final Target LBL_LIST_NEWS = Target.the("Title News")
+            .locatedBy("//ul[@class='p-listbox-list']//li//span");
+    public static final Target BTN_REMOVE_NEWS = Target.the("Button remove News")
+            .locatedBy("//span[text()='Remove']");
 }
