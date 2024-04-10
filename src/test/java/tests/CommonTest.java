@@ -14,7 +14,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.when;
 
 public class CommonTest {
     @Managed(driver = "chrome")
-    WebDriver adminBrowser;
+    protected WebDriver adminBrowser;
 
     @Managed(driver = "edge")
     protected WebDriver clientBrowser;

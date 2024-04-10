@@ -11,6 +11,11 @@ public class PartnerNavbarNavigate {
                 Click.on(PartnerPage.NAV_BTN_TRANSPORT_MANAGEMENT)
         );
     }
+    public static Performable toPartnerManagement() {
+        return Task.where("{0} navigate to Partner Management",
+                Click.on(PartnerPage.NAV_BTN_PARTNER_MANAGEMENT)
+        );
+    }
     public static Performable toRouteManagement() {
         return Task.where("{0} navigate to Route Management",
                 Click.on(PartnerPage.NAV_BTN_ROUTE_MANAGEMENT)

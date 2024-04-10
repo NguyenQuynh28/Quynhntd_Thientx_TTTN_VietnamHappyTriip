@@ -1,5 +1,6 @@
 package tests.partner;
 
+import model.DataTest;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Clear;
@@ -19,6 +20,7 @@ import ui.PartnerPage;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("PartnerNewsManagementTest")
 public class PartnerNewsManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test164")
@@ -84,7 +86,7 @@ public class PartnerNewsManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
                 PartnerNewsManagement.toAddNews(),
-                PartnerNewsManagement.inputTitle("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                PartnerNewsManagement.inputTitle(DataTest.over50char)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE_NEWS.of("Title"))).isEqualTo("Title is invalid")
@@ -278,7 +280,7 @@ public class PartnerNewsManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
                 Click.on(PartnerPage.LBL_NEWS.of("Happy tripp")),
-                PartnerNewsManagement.inputTitle("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                PartnerNewsManagement.inputTitle(DataTest.over50char)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE_NEWS.of("Title"))).isEqualTo("Title is invalid")

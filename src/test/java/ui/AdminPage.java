@@ -1,5 +1,6 @@
 package ui;
 
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class AdminPage {
@@ -29,15 +30,15 @@ public class AdminPage {
     public static final Target TITLE_ADD_NEW_USER = Target.the("Title Add New User")
             .locatedBy("//h4[text()='Add New User']");
     public static final Target TXT_NAME = Target.the("Textbox name")
-            .locatedBy("//input[@id='name']");
+            .located(By.id("name"));
     public static final Target ERROR_NAME = Target.the("Error name")
             .locatedBy("//strong[text()='Name is required']");
     public static final Target TXT_EMAIL = Target.the("Textbox email")
-            .locatedBy("//input[@id='email']");
+            .located(By.id("email"));
     public static final Target ERROR_EMAIL = Target.the("Error email")
             .locatedBy("//strong[text()='Email is required']");
     public static final Target TXT_USERNAME = Target.the("Textbox username")
-            .locatedBy("//input[@id='username']");
+            .located(By.id("username"));
     public static final Target ERROR_USERNAME = Target.the("Error username")
             .locatedBy("//strong[text()='Username is required']");
     public static final Target TXT_PASSWORD = Target.the("Textbox password")
@@ -45,7 +46,7 @@ public class AdminPage {
     public static final Target ERROR_PASSWORD = Target.the("Error password")
             .locatedBy("//strong[text()='Password is required']");
     public static final Target TXT_PHONE_NUMBER = Target.the("Textbox phone number")
-            .locatedBy("//input[@id='phoneNumber']");
+            .located(By.id("phoneNumber"));
     public static final Target ERROR_PHONE_NUMBER = Target.the("Error phone number")
             .locatedBy("//strong[text()='Phone number is required']");
     public static final Target DRP_EMPLOYEE_ROLE = Target.the("Dropdown employee role")

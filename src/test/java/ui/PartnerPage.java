@@ -3,6 +3,7 @@ package ui;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class PartnerPage {
+
     public static final Target MESSAGE_SUCCESSFULLY = Target.the("Message successfully")
             .locatedBy("//div[@data-pc-section='detail']");
     public static final Target MESSAGE_DUPLICATE_ENTRY = Target.the("Message duplicate entry")
@@ -49,6 +50,10 @@ public class PartnerPage {
             .locatedBy("//label[text()='{0}']//ancestor::div[contains(@class,'field')]//p-checkbox");
     public static final Target BTN_SAVE = Target.the("Button save to transport")
             .locatedBy("//p-button[@type='submit']");
+
+    //Partnet Management
+    public static final Target NAV_BTN_PARTNER_MANAGEMENT = Target.the("Button navigate to partner management")
+            .locatedBy("//div[@aria-label='Partner Management']");
 
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
