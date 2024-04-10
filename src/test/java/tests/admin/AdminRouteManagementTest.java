@@ -24,6 +24,10 @@ import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 public class AdminRouteManagementTest extends CommonTest {
+    /**
+     *
+     *
+     */
     @Test
     @Tag("Admin_Test91")
     @Title("Admin_Test91: The popup to choose whether to accept or decline is displayed")
@@ -202,6 +206,10 @@ public class AdminRouteManagementTest extends CommonTest {
         );
     }
 
+    /**
+     *
+     *
+     */
     @Test
     @Tag("Admin_Test96")
     @Title("Admin_Test96: The Pending route details page displays after pressing the no button")
@@ -226,6 +234,10 @@ public class AdminRouteManagementTest extends CommonTest {
         );
     }
 
+    /**
+     *
+     *
+     */
     @Test
     @Tag("Admin_Test97")
     @Title("Admin_Test97: The deny route is successful")
@@ -250,6 +262,10 @@ public class AdminRouteManagementTest extends CommonTest {
         );
     }
 
+    /**
+     *
+     *
+     */
     @Test
     @Tag("Admin_Test98")
     @Title("Admin_Test98: The system displays accepted information")
@@ -309,6 +325,11 @@ public class AdminRouteManagementTest extends CommonTest {
                 Ensure.that(Text.of(AdminPage.TXT_ROUTE_DETAILS)).isEqualTo("Pending route details")
         );
     }
+
+    /**
+     *
+     *
+     */
 
     @Test
     @Tag("Admin_Test99")
@@ -404,6 +425,10 @@ public class AdminRouteManagementTest extends CommonTest {
         );
     }
 
+    /**
+     *
+     *
+     */
     @Test
     @Tag("Admin_Test102")
     @Title("Admin_Test102: All route information is displayed")
