@@ -23,6 +23,7 @@ import untils.WaitABit;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("AdminRouteManagementTest")
 public class AdminRouteManagementTest extends CommonTest {
     @Test
     @Tag("Admin_Test91")
