@@ -51,6 +51,10 @@ public class PartnerPage {
     public static final Target BTN_SAVE = Target.the("Button save to transport")
             .locatedBy("//p-button[@type='submit']");
 
+    //Partnet Management
+    public static final Target NAV_BTN_PARTNER_MANAGEMENT = Target.the("Button navigate to partner management")
+            .locatedBy("//div[@aria-label='Partner Management']");
+
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
             .locatedBy("//div[@aria-label='Route Management']");

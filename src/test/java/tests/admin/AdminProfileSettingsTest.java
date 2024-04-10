@@ -1,5 +1,6 @@
 package tests.admin;
 
+import model.DataTest;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Click;
@@ -90,7 +91,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee41111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"),
+                AdminProfileSettings.inputNameOfUser(DataTest.over50char),
                 AdminProfileSettings.inputEmailOfUser("employee41@gmail.com"),
                 AdminProfileSettings.inputUserNameOfUser("employee41"),
                 AdminProfileSettings.inputPasswordOfUser("1234Employeer@"),
@@ -248,7 +249,7 @@ public class AdminProfileSettingsTest extends CommonTest {
                 AdminProfileSettings.toAddNewUser(),
                 AdminProfileSettings.inputNameOfUser("employee46"),
                 AdminProfileSettings.inputEmailOfUser("employee46@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee466666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666"),
+                AdminProfileSettings.inputUserNameOfUser(DataTest.over50char),
                 AdminProfileSettings.inputPasswordOfUser("1234Employeer@"),
                 AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
                 AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
@@ -452,7 +453,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
-        //Navigate to Add new User page and the "Password" field contains only special characters
+        //Navigate to Add new User page and the "Password" field does not include 4 types of characters: lowercase, letters, uppercase letters, numbers and special characters
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
