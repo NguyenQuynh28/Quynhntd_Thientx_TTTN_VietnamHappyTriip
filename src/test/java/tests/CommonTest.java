@@ -20,10 +20,10 @@ public class CommonTest {
     WebDriver clientBrowser;
 
     @CastMember(name = "Admin")
-    Actor admin;
+    public Actor admin;
 
     @CastMember(name = "Partner/Passenger")
-    Actor client;
+    public Actor client;
 
     @BeforeEach
     public void start() {
@@ -33,10 +33,10 @@ public class CommonTest {
         when(admin).attemptsTo(Navigate.toLoginAdminPage());
         when(client).attemptsTo(Navigate.toLoginClientPage());
     }
+
     @AfterEach
     public void close() {
         adminBrowser.close();
         clientBrowser.close();
-
     }
 }

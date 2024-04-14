@@ -1,6 +1,7 @@
 package ui;
 
 import net.serenitybdd.screenplay.targets.Target;
+import net.thucydides.core.annotations.findby.By;
 
 public class AdminPage {
     public static final Target TXT_SEARCH = Target.the("Textbox search")
@@ -70,6 +71,30 @@ public class AdminPage {
     //POI & Station
     public static final Target NAV_BTN_POI_STATIONS = Target.the("Button navigate to POI & stations")
             .locatedBy("//div[@aria-label='POI & Stations']");
+    public static final Target BTN_ADD_POI_STATIONS = Target.the("Button add POI & stations")
+            .locatedBy("//button//span[text()='Add POI & Station']");
+    public static final Target TITLE_POI_STATIONS = Target.the("Title POI & stations")
+            .locatedBy("//div[@class='poi-stations']//h4");
+    public static final Target BTN_SAVE_POI_STATIONS = Target.the("Button POI & stations")
+            .locatedBy("//button//span[text()='Save']");
+    public static final Target TXT_NAME_POI_STATIONS = Target.the("Textbox name POI & stations")
+            .located(By.id("name"));
+    public static final Target DRD_PROVINCE = Target.the("Option Province/City")
+            .locatedBy("//label[@for='city']//parent::div//span");
+    public static final Target OPTION_PROVINCE = Target.the("Option Province/City")
+            .locatedBy("//li[@role='option']//div[text()='{0}']");
+    public static final Target TXT_DISTRICT_POI_STATIONS = Target.the("Textbox district POI & stations")
+            .located(By.id("district"));
+    public static final Target TXT_WARD_POI_STATIONS = Target.the("Textbox ward POI & stations")
+            .located(By.id("ward"));
+    public static final Target TXT_ADDRESS_POI_STATIONS = Target.the("Textbox address POI & stations")
+            .located(By.id("address"));
+    public static final Target TXT_GMAP_POI_STATIONS = Target.the("Textbox google map POI & stations")
+            .located(By.id("gmapLink"));
+    public static final Target TXT_EMBED_GMAP_POI_STATIONS = Target.the("Textbox embed google map POI & stations")
+            .located(By.id("embedGmapLink"));
+    public static final Target TXT_DESCRIPTION_POI_STATIONS = Target.the("Textbox description map POI & stations")
+            .located(By.id("description"));
 
     //Partner Management
     public static final Target NAV_BTN_PARTNER_MANAGEMENT = Target.the("Button navigate to partner management")
