@@ -22,9 +22,10 @@ public class LoadConfig {
     public static String getPassword(String auth) {
         return EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments." + auth + ".password");
     }
-
-    public static String getImagePath(String type) {
-        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.imagePath") + "BusStopIMG" + type;
+    public static String getImagePath(String value, String type) {
+        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.imagePath") + value + type;
     }
-
+    public static String getScreenshotPath() {
+        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.screenShotPath") + "image.png";
+    }
 }

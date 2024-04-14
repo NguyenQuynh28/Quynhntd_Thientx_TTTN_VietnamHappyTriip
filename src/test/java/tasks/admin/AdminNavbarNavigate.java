@@ -24,11 +24,17 @@ public class AdminNavbarNavigate {
                 Click.on(AdminPage.BTN_ADD_USER)
         );
     }
-    public static Performable toPoiAndStations(){
+    public static Performable toPoiAndStations() {
         return Task.where("{0} navigate to Poi & Stations",
                 Click.on(AdminPage.NAV_BTN_POI_STATIONS)
                         .then(Click.on(AdminPage.BTN_ADD_POI_STATIONS)),
                 WaitUntil.the(AdminPage.TITLE_POI_STATIONS, isVisible()).forNoMoreThan(30).seconds()
+        );
+    }
+
+    public static Performable toRouteManagement() {
+        return Task.where("{0} navigate to Route Confirmation",
+                Click.on(AdminPage.NAV_BTN_ROUTE_MANAGEMENT)
         );
     }
 }
