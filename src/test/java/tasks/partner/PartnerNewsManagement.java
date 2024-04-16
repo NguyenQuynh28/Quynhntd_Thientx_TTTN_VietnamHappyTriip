@@ -30,6 +30,5 @@ public class PartnerNewsManagement {
         return Task.where("{0} import image: ",
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, value, type)
         );
-
     }
 }

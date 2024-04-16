@@ -11,6 +11,7 @@ import tests.CommonTest;
 import static net.serenitybdd.screenplay.GivenWhenThen.givenThat;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("PassengerChangePasswordTest")
 public class PassengerChangePasswordTest extends CommonTest {
     @Test
     @Tag("Passenger_Test65")
