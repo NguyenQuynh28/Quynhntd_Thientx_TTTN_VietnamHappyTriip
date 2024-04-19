@@ -38,6 +38,5 @@ public class CommonTest {
     public void close() {
         adminBrowser.close();
         clientBrowser.close();
-
     }
 }

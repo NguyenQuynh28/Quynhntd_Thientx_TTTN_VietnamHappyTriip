@@ -8,12 +8,12 @@ import net.serenitybdd.screenplay.questions.Text;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import questions.CountRoute;
+import tasks.ChangePage;
 import tasks.Login;
-import tasks.admin.AdminNavbarNavigate;
 import tasks.passenger.PassengerBookingHistory;
 import tasks.passenger.PassengerNavbarNavigate;
 import tests.CommonTest;
-import ui.AdminPage;
 import ui.PassengerPage;
 import untils.WaitABit;
 
@@ -344,17 +344,16 @@ public class PassengerBookingHistoryTest extends CommonTest {
     public void Passenger_test46() {
         givenThat(client).attemptsTo(Login.toPassengerPage());
         when(client).attemptsTo(
-                PassengerNavbarNavigate.toBookingHistory(),
-                PassengerBookingHistory.searchTicket("NPU9P6L8"),
-                Click.on(PassengerPage.BTN_CLEAR)
-
+                PassengerNavbarNavigate.toBookingHistory()
+        );
+        then(client).should(
+                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("codeOfTicket", "Showing 46 to 50"))
         );
     }
 
     /**
      * View booked ticket
      */
-
     @Test
     @Tag("Passenger_Test47")
     @Title("Passenger_Test47: Check status MONEYPENDING")
@@ -373,54 +372,31 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 WaitABit.inSecond(3)
         );
         and(client).attemptsTo(
-                PassengerNavbarNavigate.toBookingHistory()
+                PassengerNavbarNavigate.toBookingHistory(),
+                ChangePage.change("BFeDcpCG", 20, "MONEYPENDING", "BFeDcpCG")
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PassengerPage.TXT_TAG.of("BFeDcpCG"))).isEqualTo("MONEYPENDING")
         );
     }
 
-    /**
-     * chưa làm confirm ticket
-     */
     @Test
     @Tag("Passenger_Test48")
     @Title("Passenger_Test48: Check status SUCCESS")
     public void Passenger_test48() {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
-        // Create ticket
         when(client).attemptsTo(
-                PassengerBookingHistory.selectFrom("Đà Nẵng"),
-                PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
-                PassengerBookingHistory.ClickSearchTicket(),
-                PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("B3"),
-                Click.on(PassengerPage.BTN_CASH)
+                PassengerNavbarNavigate.toBookingHistory(),
+                ChangePage.change("pUemNhpp", 20, "SUCCESS", "pUemNhpp")
+
         );
-        // Cofirm ticket
-        and(admin).attemptsTo(
-                Login.toAdminPage(),
-                AdminNavbarNavigate.toBookingConfirmation(),
-                Click.on(AdminPage.BTN_CONFIRM.of("NWDq1Jdy"))
-        );
-
-
-
-
-        // Navigate to booking history
-        and(client).attemptsTo(
-                PassengerNavbarNavigate.toBookingHistory()
-        );
+        // Passenger check status
         then(client).attemptsTo(
-                Ensure.that(Text.of(PassengerPage.TXT_TAG.of("o0tRI31G"))).isEqualTo("SUCCESS")
+                Ensure.that(Text.of(PassengerPage.TXT_TAG.of("pUemNhpp"))).isEqualTo("SUCCESS")
         );
     }
 
-    /**
-     * xem lai trang
-     */
     @Test
     @Tag("Passenger_Test49")
     @Title("Passenger_Test49: Check status PENDING")
@@ -429,22 +405,11 @@ public class PassengerBookingHistoryTest extends CommonTest {
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
         when(client).attemptsTo(
-                PassengerBookingHistory.selectFrom("Đà Nẵng"),
-                PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
-                PassengerBookingHistory.ClickSearchTicket(),
-                PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("C1"),
-                Click.on(PassengerPage.BTN_CREDIT_AND_DEBIT_CARD),
-                WaitABit.inSecond(3)
-        );
-        and(client).attemptsTo(
                 PassengerNavbarNavigate.toBookingHistory(),
-                Click.on(AdminPage.BTN_PAGES.of("2"))
+                ChangePage.change("NPU9P6L8", 20, "PENDING", "NPU9P6L8")
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PassengerPage.TXT_TAG.of("NPU9P6L8"))).isEqualTo("PENDING")
         );
     }
-
 }

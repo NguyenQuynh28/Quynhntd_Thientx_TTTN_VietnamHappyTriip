@@ -8,6 +8,7 @@ public class AdminPage {
             .locatedBy("//input[contains(@placeholder,'Search')]");
     public static final Target ERROR_MESSAGE = Target.the("Error message")
             .locatedBy("//label[text()='{0}']//parent::div//strong");
+
     //Booking Confirmation
     public static final Target NAV_BTN_BOOKING_CONFIRMATION = Target.the("Button navigate to booking confirmation")
             .locatedBy("//div[@aria-label='Booking Confirmation']");
@@ -15,12 +16,14 @@ public class AdminPage {
             .locatedBy("//div[@class='booking-confirmation']//h2");
     public static final Target BTN_CONFIRM = Target.the("Button booking conformation")
             .locatedBy("//td[text()=' {0} ']//ancestor::tr//p-button[@label='Confirm']");
-    public static final Target TXT_MESSAGE_BOOKING_CONFIRMATION= Target.the("Message displayed on popup")
+    public static final Target TXT_MESSAGE_BOOKING_CONFIRMATION = Target.the("Message displayed on popup")
             .locatedBy("//span[contains(@class,'confirm-dialog-message')]");
-    public static final Target BTN_RECONFIRMATION_INFO= Target.the("Button reconfirm information")
-            .locatedBy("//span[text()='{0}']");
-    public static final Target LST_WAITING_LIST_CONFIRMATION = Target.the("List box waiting for confirmation")
-            .locatedBy("//td[text()=' {0} ']//ancestor::tr]");
+    public static final Target BTN_RECONFIRM = Target.the("Button reconfirm information")
+            .locatedBy("//button[@aria-label='{0}']");
+    public static Target LBL_ROUTE(String status, String route) {
+        return Target.the("Label route")
+                .locatedBy(String.format("//span[text()='" + status + "']//ancestor::tr//td[text()=' " + route + " ']"));
+    }
 
     //Profile & Settings
     public static final Target NAV_BTN_PROFILE_SETTINGS = Target.the("Button navigate to profile & settings")
@@ -87,30 +90,19 @@ public class AdminPage {
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
             .locatedBy("//div[@aria-label='Route Management']");
-
-    public static final Target BTN_PAGES = Target.the("Button pages")
-            .locatedBy("//span[@class='p-paginator-pages ng-star-inserted']//button[text()=' {0} ']");
-    public static final Target LBL_WAITING_CONFIRM_ROUTE = Target.the("Label wait route confirmation")
-            .locatedBy(" //td[text()=' {0} ']//ancestor::tr");
+    public static final Target BTN_CHANGE_PAGES = Target.the("Button change pages")
+            .locatedBy("//button[contains(@class,'p-paginator-next')]");
     public static final Target TXT_ROUTE_DETAILS = Target.the("Message pending route details on popup")
             .locatedBy("(//div[contains(@class,'p-dialog-header')])[1]");
     public static final Target BTN_CONFIRM_ROUTE = Target.the("Button confirm route")
             .locatedBy("//p-button[@label='{0}']");
     public static final Target TXT_CONFIRM_INFORMATION = Target.the("Text confirm accept route")
             .locatedBy("//span[contains(@class,'p-confirm-popup-message')]");
-    public static final Target BTN_RECONFIRM = Target.the("Button reconfirm information")
-            .locatedBy("//button[@aria-label='{0}']");
-    public static final Target LBL_ACCEPT = Target.the("Label accepted")
-            .locatedBy("//td[text()=' {0} ']//ancestor::tr//span[text()='ACCEPTED']");
-    public static final Target LBL_DENY = Target.the("Label denied")
-            .locatedBy("//td[text()=' {0}  ']//ancestor::tr//span[text()='DENIED']");
     public static final Target MESSAGE_SEARCH_ROUTE = Target.the("Message [No results found]")
             .locatedBy("//td[text()='No routes found.']");
     public static final Target LBL_ROUTE_NAME = Target.the("Route name")
             .locatedBy("//td[text()=' {0} ']");
-    public static final Target BTN_CLEAR = Target.the("Button clear information")
-            .locatedBy("//p-button[@label='Clear']");
-    public static final Target TXT_NUMBER_OF_PAGES= Target.the("Number of pages")
+    public static final Target TXT_NUMBER_OF_PAGES = Target.the("Number of pages")
             .locatedBy("//span[@class='p-paginator-current ng-star-inserted']");
 
 }

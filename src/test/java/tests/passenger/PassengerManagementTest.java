@@ -1,5 +1,6 @@
 package tests.passenger;
 
+import model.DataTest;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Click;
@@ -74,12 +75,11 @@ public class PassengerManagementTest extends CommonTest {
     @Tag("Passenger_Test53")
     @Title("Passenger_Test53: [Name is invalid] is displayed")
     public void Passenger_test53() {
-        String name = "xuannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn";
         givenThat(client).attemptsTo(Login.toPassengerPage());
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toPassengerManagement(),
                 PassengerManagement.clikUpdate(),
-                PassengerManagement.inputName(name),
+                PassengerManagement.inputName(DataTest.over50char),
                 PassengerManagement.clickSave()
         );
         then(client).attemptsTo(
