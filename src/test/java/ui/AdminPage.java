@@ -14,16 +14,18 @@ public class AdminPage {
             .locatedBy("//div[@aria-label='Booking Confirmation']");
     public static final Target TITLE_BOOKING_CONFIRMATION = Target.the("Title booking confirmation")
             .locatedBy("//div[@class='booking-confirmation']//h2");
-    public static final Target BTN_CONFIRM = Target.the("Button booking conformation")
+    public static final Target BTN_CONFIRM_BOOKING = Target.the("Button booking confirmation")
             .locatedBy("//td[text()=' {0} ']//ancestor::tr//p-button[@label='Confirm']");
+    public static final Target BTN_CANCEL_BOOKING = Target.the("Button booking cancel")
+            .locatedBy("//td[text()=' {0} ']//ancestor::tr//p-button[@label='Cancel']");
+    public static final Target BTN_RECONFIRM_BOOKING = Target.the("Button booking reconfirmation")
+            .locatedBy("//button[contains(@class,'{0}')]");
     public static final Target TXT_MESSAGE_BOOKING_CONFIRMATION = Target.the("Message displayed on popup")
             .locatedBy("//span[contains(@class,'confirm-dialog-message')]");
-    public static final Target BTN_RECONFIRM = Target.the("Button reconfirm information")
-            .locatedBy("//button[@aria-label='{0}']");
-    public static Target LBL_ROUTE(String status, String route) {
-        return Target.the("Label route")
-                .locatedBy(String.format("//span[text()='" + status + "']//ancestor::tr//td[text()=' " + route + " ']"));
-    }
+    public static final Target LBL_NAME_PASSENGER = Target.the("Label name of passenger")
+            .locatedBy("//span[text()='{0}']");
+    public static final Target LBL_CODE = Target.the("Label code")
+            .locatedBy("//td[text()=' {0} ']");
 
     //Profile & Settings
     public static final Target NAV_BTN_PROFILE_SETTINGS = Target.the("Button navigate to profile & settings")
@@ -98,11 +100,17 @@ public class AdminPage {
             .locatedBy("//p-button[@label='{0}']");
     public static final Target TXT_CONFIRM_INFORMATION = Target.the("Text confirm accept route")
             .locatedBy("//span[contains(@class,'p-confirm-popup-message')]");
-    public static final Target MESSAGE_SEARCH_ROUTE = Target.the("Message [No results found]")
-            .locatedBy("//td[text()='No routes found.']");
+    public static final Target MESSAGE_NO_RESULTS = Target.the("Message [No results found]")
+            .locatedBy("//tr[@class='ng-star-inserted']//td");
     public static final Target LBL_ROUTE_NAME = Target.the("Route name")
             .locatedBy("//td[text()=' {0} ']");
     public static final Target TXT_NUMBER_OF_PAGES = Target.the("Number of pages")
             .locatedBy("//span[@class='p-paginator-current ng-star-inserted']");
+    public static final Target BTN_RECONFIRM = Target.the("Button reconfirm information")
+            .locatedBy("//button[@aria-label='{0}']");
+    public static Target LBL_ROUTE(String status, String route) {
+        return Target.the("Label route")
+                .locatedBy(String.format("//span[text()='" + status + "']//ancestor::tr//td[text()=' " + route + " ']"));
+    }
 
 }

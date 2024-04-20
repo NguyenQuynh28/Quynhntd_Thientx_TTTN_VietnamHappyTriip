@@ -473,7 +473,7 @@ public class AdminRouteManagementTest extends CommonTest {
                 AdminRouteManagement.searchRoute("Ho Chi Minh")
         );
         then(admin).attemptsTo(
-                Ensure.that(Text.of(AdminPage.MESSAGE_SEARCH_ROUTE)).isEqualTo("No routes found.")
+                Ensure.that(Text.of(AdminPage.MESSAGE_NO_RESULTS)).isEqualTo("No routes found.")
         );
     }
 
