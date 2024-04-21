@@ -95,8 +95,6 @@ public class AdminBookingConfirmationTest extends CommonTest {
     @Tag("Admin_Test05")
     @Title("Admin_Test05: Popup deny booking is displayed")
     public void admin_test05() {
-        clientBrowser.close();
-
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -226,5 +224,4 @@ public class AdminBookingConfirmationTest extends CommonTest {
                 seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("1OvKFzH7", "Showing 31 to 36"))
         );
     }
-
 }

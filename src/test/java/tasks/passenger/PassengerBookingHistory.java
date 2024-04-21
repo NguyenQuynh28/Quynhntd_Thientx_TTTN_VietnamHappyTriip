@@ -58,7 +58,4 @@ public class PassengerBookingHistory {
                 Actions.inputData(PassengerPage.TXT_SEARCH_KEYWORD, value)
         );
     }
-
-
-
 }

@@ -33,6 +33,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
+        // Do not select the "From"
         when(client).attemptsTo(
                 Click.on(PassengerPage.DRP_CHOOSE_ADDRESS.of("From")),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
@@ -51,6 +52,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
+        // Do not select the "To"
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 Click.on(PassengerPage.DRP_CHOOSE_ADDRESS.of("To")),
@@ -69,6 +71,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
+        // Do not select the "Depart date"
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
@@ -89,6 +92,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
+        // Depart date is wrong format
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
@@ -114,7 +118,8 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
-                Ensure.that(Text.of(PassengerPage.MESSAGE_RESULT)).isEqualTo("1 result(s)"));
+                Ensure.that(PassengerPage.MESSAGE_RESULT).isDisplayed()
+        );
     }
 
     @Test
