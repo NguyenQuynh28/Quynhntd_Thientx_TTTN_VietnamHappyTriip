@@ -24,7 +24,7 @@ public class PassengerPage {
     public static final Target BTN_SEARCH_TICKET = Target.the("Button search ticket")
             .locatedBy("//button[@class='p-ripple p-element p-button-secondary p-button p-component']");
     public static final Target BTN_BOOKING_NOW = Target.the("Button booking now")
-            .locatedBy("//h4[text()='{0}']//ancestor::div[@class='card flex flex-column w-full']//p-button[@label='Book Now']");
+            .locatedBy("//h4[text()='{0}']//ancestor::div[contains(@class,'card')]//p-button[@label='Book Now']");
     public static final Target BTN_CHOOSE_SEAT = Target.the("Button choose seat")
             .locatedBy("//div[text()='{0}']");
     public static final Target BTN_CHECKOUT = Target.the("Button checkout")
@@ -64,7 +64,9 @@ public class PassengerPage {
     public static final Target TXT_CODE = Target.the("Code of ticket is booked")
             .locatedBy("//td[text()=' {0} ']");
     public static final Target TXT_TAG = Target.the("Status of booking history")
-            .locatedBy(" //td[text()=' {0} ']//ancestor::tr//span[@class='p-tag-value']");
+            .locatedBy("//td[text()=' {0} ']//ancestor::tr//span[@class='p-tag-value']");
+    public static final Target TXT_FIRST_TAG = Target.the("Status of booking history")
+            .locatedBy("(//tr[contains(@class, 'p-selectable-row')])[1]//p-tag//span[@class='p-tag-value']");
 
     // Passenger Management
     public static final Target NAV_BTN_PASSENGER_MANAGEMENT = Target.the("Navigate to passenger management")
@@ -85,8 +87,7 @@ public class PassengerPage {
             .locatedBy("//input[@id='email']");
     public static final Target BTN_CANCEL = Target.the("Button cancel")
             .locatedBy("//p-button[@label='Cancel']");
-    public static final Target VERIFY_INFO_IMG= Target.the("Verify information")
-            .locatedBy("//div[@class='form px-6 py-3']");
-
+    public static final Target LBL_ROUTE = Target.the("Label route")
+            .locatedBy("//tr[contains(@class,'p-element')]");
 }
 

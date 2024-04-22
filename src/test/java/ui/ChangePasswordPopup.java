@@ -19,4 +19,6 @@ public class ChangePasswordPopup {
             .locatedBy("//label[text()='{0}']//parent::div//strong");
     public static final Target MESSAGE_ALERT = Target.the("Message")
             .locatedBy("//div[@data-pc-section='detail']");
+    public static final Target MESSAGE_CHANGE_PASSWORD = Target.the("Message change password of popup")
+            .locatedBy("//span[@id='pn_id_10_header_title']");
 }
