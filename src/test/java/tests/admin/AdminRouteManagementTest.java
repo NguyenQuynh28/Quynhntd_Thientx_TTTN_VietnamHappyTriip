@@ -16,7 +16,7 @@ import tasks.admin.AdminNavbarNavigate;
 import tasks.admin.AdminRouteManagement;
 import tasks.partner.PartnerNavbarNavigate;
 import tasks.partner.PartnerRouteManagement;
-import tasks.partner.PartnerVehicleManagement;
+import tasks.partner.PartnerTransportManagement;
 import tests.CommonTest;
 import ui.AdminPage;
 import ui.PartnerPage;
@@ -25,6 +25,7 @@ import untils.WaitABit;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("AdminRouteManagementTest")
 public class AdminRouteManagementTest extends CommonTest {
 
     /**
@@ -45,9 +46,9 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
-                Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
-                Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
-                Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
+                Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
                 Click.on(PartnerPage.BTN_SAVE)
         );
@@ -265,9 +266,9 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
-                Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
-                Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
-                Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
+                Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
                 Click.on(PartnerPage.BTN_SAVE)
         );
@@ -319,9 +320,9 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
-                Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
-                Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
-                Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
+                Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
                 Click.on(PartnerPage.BTN_SAVE)
         );
@@ -374,9 +375,9 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
-                Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
-                Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
-                Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
+                Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
                 Click.on(PartnerPage.BTN_SAVE)
         );

@@ -18,6 +18,7 @@ import ui.ChangePasswordPopup;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("PassengerChangePasswordTest")
 public class PassengerChangePasswordTest extends CommonTest {
     @Test
     @Tag("Passenger_Test65")

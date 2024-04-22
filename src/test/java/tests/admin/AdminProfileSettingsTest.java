@@ -20,6 +20,7 @@ import untils.WaitABit;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("AdminProfileSettingsTest")
 public class AdminProfileSettingsTest extends CommonTest {
     @Test
     @Tag("Admin_Test13")

@@ -1,6 +1,7 @@
 package ui;
 
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class PartnerPage {
 
@@ -10,12 +11,18 @@ public class PartnerPage {
             .locatedBy("//div[@data-pc-section='detail']");
     public static final Target TXT_SEARCH = Target.the("Textbox search")
             .locatedBy("//input[contains(@placeholder,'Search')]");
+    public static final Target ERROR_MESSAGE = Target.the("Error message")
+            .locatedBy("//label[contains(text(),'{0}')]//parent::div//small");
 
     //Transport Management
     public static final Target NAV_BTN_TRANSPORT_MANAGEMENT = Target.the("Button navigate to transport management")
             .locatedBy("//div[@aria-label='Transport Management']");
+    public static final Target TITLE_ADD_NEW_TRANSPORT = Target.the("Title Add New Transport")
+            .locatedBy("//h4[text()='Add New Transport']");
+    public static final Target TITLE_TRANSPORT_DETAILS = Target.the("Title Transport Details")
+            .locatedBy("//h4[text()='Transport Details']");
     public static final Target TXT_NAME = Target.the("Text box name")
-            .locatedBy("//input[@id='name']");
+            .located(By.id("name"));
     public static final Target BTN_VEHICLE_TYPE = Target.the("Button vehicle type ")
             .locatedBy("//div[@role='button']");
     public static final Target LST_VEHICLE = Target.the("List box to select vehicle type ")
@@ -42,18 +49,40 @@ public class PartnerPage {
             .locatedBy("//label[text()='Col*']//ancestor::div[contains(@class,'col col-4')]//input");
     public static final Target BTN_CONFIRM = Target.the("Button confirm")
             .locatedBy("//p-button[@label='Confirm']");
+    public static final Target BTN_VIP_SEAT_TYPE = Target.the("Button VIP Seat type")
+            .locatedBy("//p-checkbox[@inputid='vip-seat-color']");
+    public static final Target BTN_VIP_SEAT = Target.the("Button VIP Seat")
+            .locatedBy("(//div[@class='matrix-row flex']//div[@class='p-checkbox p-component'])[1]");
     public static final Target BTN_COMPLETE = Target.the("Button complete")
             .locatedBy("//p-button[@label='Complete']");
     public static final Target BTN_IMPORT_IMAGE = Target.the("Button import image")
             .locatedBy("(//input[@accept='image/*'])[1]");
-    public static final Target BTN_UTILITY = Target.the("Button choose utility")
+    public static final Target CHK_UTILITY = Target.the("Checkbox choose utility")
             .locatedBy("//label[text()='{0}']//ancestor::div[contains(@class,'field')]//p-checkbox");
+    public static final Target LBL_TRANSPORT = Target.the("Label Transport")
+            .locatedBy("//li[@aria-label='{0}']");
     public static final Target BTN_SAVE = Target.the("Button save to transport")
             .locatedBy("//p-button[@type='submit']");
 
-    //Partnet Management
+    //Partner Management
     public static final Target NAV_BTN_PARTNER_MANAGEMENT = Target.the("Button navigate to partner management")
             .locatedBy("//div[@aria-label='Partner Management']");
+    public static final Target TITLE_PARTNER_PROFILE = Target.the("Title Partner profile")
+            .locatedBy("//h4[text()='Partner profile']");
+    public static final Target ERROR_PARTNER_ACCEPTED = Target.the("Error [Partner profile is in view mode because it was accepted!]")
+            .locatedBy("//strong[text()=' Partner profile is in view mode because it was accepted! ']");
+    public static final Target TXT_TAX_CODE = Target.the("Text box Tax Code")
+            .located(By.id("taxCode"));
+    public static final Target TXT_ADDRESS = Target.the("Text box address")
+            .located(By.id("address"));
+    public static final Target TXT_EMAIL = Target.the("Text box email")
+            .located(By.id("email"));
+    public static final Target TXT_PHONE_NUMBER = Target.the("Text box phone number")
+            .located(By.id("phoneNumber"));
+    public static final Target TXT_MEDIA_LINK = Target.the("Text box media link")
+            .located(By.id("MedialLink"));
+    public static final Target TXT_DESCRIPTION_PARTNER= Target.the("Text box description")
+            .located(By.id("description"));
 
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
@@ -80,7 +109,7 @@ public class PartnerPage {
             .locatedBy("//div[@aria-label='News Management']");
     public static final Target BTN_ADD_NEWS = Target.the("Button add news")
             .locatedBy("//p-button[@label='Add News']");
-    public static final Target TILTLE_ADD_NEWS = Target.the("Title Add News")
+    public static final Target TITLE_ADD_NEWS = Target.the("Title Add News")
             .locatedBy("//h4[text()='Add News']");
     public static final Target TXT_TITLE = Target.the("Textbox title")
             .locatedBy("//input[@placeholder='Enter news title']");
@@ -96,7 +125,7 @@ public class PartnerPage {
             .locatedBy("//label[contains(text(),'{0}')]//parent::div//small");
     public static final Target LBL_NEWS = Target.the("Label News")
             .locatedBy("//li[@aria-label='{0}']");
-    public static final Target MESSAGE_SEARCH_NEWS= Target.the("Message [No results found]")
+    public static final Target MESSAGE_SEARCH_NO_RESULTS = Target.the("Message [No results found]")
             .locatedBy("//li[text()=' No results found ']");
     public static final Target LBL_LIST_NEWS = Target.the("Title News")
             .locatedBy("//ul[@class='p-listbox-list']//li//span");

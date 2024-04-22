@@ -19,6 +19,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("AdminBookingConfirmationTest")
 public class AdminBookingConfirmationTest extends CommonTest {
     /**
      * Booking confirmation
