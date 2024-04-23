@@ -31,7 +31,7 @@ public class CommonTest {
         givenThat(client).can(BrowseTheWeb.with(clientBrowser));
 
         when(admin).attemptsTo(Navigate.toLoginAdminPage());
-        when(client).attemptsTo(Navigate.toLoginClientPage());
+//        when(client).attemptsTo(Navigate.toLoginClientPage());
     }
 
     @AfterEach
