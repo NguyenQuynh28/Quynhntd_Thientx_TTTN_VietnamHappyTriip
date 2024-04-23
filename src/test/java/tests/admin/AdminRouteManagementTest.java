@@ -41,9 +41,9 @@ public class AdminRouteManagementTest extends CommonTest {
         // Create Transport
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toTransportManagement(),
-                PartnerVehicleManagement.inputNameTransport("Bus 12"),
-                PartnerVehicleManagement.chooseVehicleType("Bus"),
-                PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
+                PartnerTransportManagement.inputNameTransport("Bus 12"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
@@ -94,14 +94,14 @@ public class AdminRouteManagementTest extends CommonTest {
         // Create Transport
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toTransportManagement(),
-                PartnerVehicleManagement.inputNameTransport("Bus 13"),
-                PartnerVehicleManagement.chooseVehicleType("Bus"),
-                PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
+                PartnerTransportManagement.inputNameTransport("Bus 13"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
-                Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
-                Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
-                Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
+                Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
                 Click.on(PartnerPage.BTN_SAVE)
         );
@@ -150,14 +150,14 @@ public class AdminRouteManagementTest extends CommonTest {
         // Create Transport
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toTransportManagement(),
-                PartnerVehicleManagement.inputNameTransport("Bus 14"),
-                PartnerVehicleManagement.chooseVehicleType("Bus"),
-                PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
+                PartnerTransportManagement.inputNameTransport("Bus 14"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
-                Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
-                Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
-                Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
+                Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
                 Click.on(PartnerPage.BTN_SAVE)
         );
@@ -205,14 +205,14 @@ public class AdminRouteManagementTest extends CommonTest {
         // Create Transport
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toTransportManagement(),
-                PartnerVehicleManagement.inputNameTransport("Bus 15"),
-                PartnerVehicleManagement.chooseVehicleType("Bus"),
-                PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
+                PartnerTransportManagement.inputNameTransport("Bus 15"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
-                Click.on(PartnerPage.BTN_UTILITY.of("Air Conditioner")),
-                Click.on(PartnerPage.BTN_UTILITY.of("Rest Stop")),
-                Click.on(PartnerPage.BTN_UTILITY.of("WiFi")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
+                Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
                 Click.on(PartnerPage.BTN_SAVE)
         );
@@ -261,9 +261,9 @@ public class AdminRouteManagementTest extends CommonTest {
         // Create Transport
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toTransportManagement(),
-                PartnerVehicleManagement.inputNameTransport("Bus 16"),
-                PartnerVehicleManagement.chooseVehicleType("Bus"),
-                PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
+                PartnerTransportManagement.inputNameTransport("Bus 16"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
@@ -315,9 +315,9 @@ public class AdminRouteManagementTest extends CommonTest {
         // Create Transport
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toTransportManagement(),
-                PartnerVehicleManagement.inputNameTransport("Bus 17"),
-                PartnerVehicleManagement.chooseVehicleType("Bus"),
-                PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
+                PartnerTransportManagement.inputNameTransport("Bus 17"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
@@ -370,9 +370,9 @@ public class AdminRouteManagementTest extends CommonTest {
         // Create Transport
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toTransportManagement(),
-                PartnerVehicleManagement.inputNameTransport("Bus 18"),
-                PartnerVehicleManagement.chooseVehicleType("Bus"),
-                PartnerVehicleManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
+                PartnerTransportManagement.inputNameTransport("Bus 18"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
