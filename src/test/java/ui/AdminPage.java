@@ -90,7 +90,9 @@ public class AdminPage {
     public static final Target DRD_PROVINCE = Target.the("Option Province/City")
             .locatedBy("//label[@for='city']//parent::div//span");
     public static final Target OPTION_PROVINCE = Target.the("Option Province/City")
-            .locatedBy("//li[@role='option']//div[text()='{0}']");
+            .locatedBy("//ul[@role='listbox']//div[text()='{0}']");
+    public static final Target BTN_X_PROVINCE = Target.the("Button X Province/City")
+            .locatedBy("//timesicon//*[local-name()='svg']");
     public static final Target TXT_DISTRICT_POI_STATIONS = Target.the("Textbox district POI & stations")
             .located(By.id("district"));
     public static final Target TXT_WARD_POI_STATIONS = Target.the("Textbox ward POI & stations")
@@ -103,6 +105,8 @@ public class AdminPage {
             .located(By.id("embedGmapLink"));
     public static final Target TXT_DESCRIPTION_POI_STATIONS = Target.the("Textbox description map POI & stations")
             .located(By.id("description"));
+    public static final Target BTN_UPLOAD_IMAGE = Target.the("Button upload image")
+            .located(By.xpath("//input[@accept='image/*'][1]"));
 
     //Partner Management
     public static final Target NAV_BTN_PARTNER_MANAGEMENT = Target.the("Button navigate to partner management")
