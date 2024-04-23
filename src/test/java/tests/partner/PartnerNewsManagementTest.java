@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.Text;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,6 +19,7 @@ import tests.CommonTest;
 import ui.PartnerPage;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 @Tag("PartnerNewsManagementTest")
@@ -35,7 +37,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 PartnerNewsManagement.toAddNews()
         );
         then(client).attemptsTo(
-                Ensure.that(PartnerPage.TILTLE_ADD_NEWS).isDisplayed()
+                Ensure.that(PartnerPage.TITLE_ADD_NEWS).isDisplayed()
         );
     }
 
@@ -208,7 +210,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_CANCEL_NEWS)
         );
         then(client).attemptsTo(
-                Ensure.that(PartnerPage.TILTLE_ADD_NEWS).isNotDisplayed()
+                Ensure.that(PartnerPage.TITLE_ADD_NEWS).isNotDisplayed()
         );
     }
 
@@ -229,7 +231,11 @@ public class PartnerNewsManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE_NEWS)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("News is created successfully")
+        );
+        and(client).attemptsTo(
+                Ensure.that(PartnerPage.LBL_NEWS.of("Vietnam Happy triip")).isDisplayed()
         );
     }
 
@@ -412,7 +418,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 Actions.inputData(PartnerPage.TXT_SEARCH, "aaaaaaaaaa")
         );
         then(client).attemptsTo(
-                Ensure.that(PartnerPage.MESSAGE_SEARCH_NEWS).isDisplayed()
+                Ensure.that(PartnerPage.MESSAGE_SEARCH_NO_RESULTS).isDisplayed()
         );
     }
 

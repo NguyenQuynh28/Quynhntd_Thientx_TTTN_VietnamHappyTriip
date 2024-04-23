@@ -9,7 +9,7 @@ import tasks.Actions;
 import ui.PassengerPage;
 
 public class PassengerManagement {
-    public static Performable clikUpdate(){
+    public static Performable clickUpdate(){
         return Task.where("Click button update",
                 Click.on(PassengerPage.BTN_UPDATE));
     }
@@ -17,7 +17,7 @@ public class PassengerManagement {
         return Task.where("Input name",
                 Actions.inputData(PassengerPage.TXT_NAME, value));
     }
-    public static Performable inputEmial(String value){
+    public static Performable inputEmail(String value){
         return Task.where("Input Email",
                 Actions.inputData(PassengerPage.TXT_EMAIL, value));
     }

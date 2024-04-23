@@ -27,5 +27,6 @@ public class ChangePassword implements Performable {
                     Click.on(ChangePasswordPopup.BTN_CHANGE_PASSWORD)
             );
         }
+
     }
 }

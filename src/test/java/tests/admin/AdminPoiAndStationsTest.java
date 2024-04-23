@@ -69,7 +69,7 @@ public class AdminPoiAndStationsTest extends CommonTest {
         //3.Proceed to enter all the information into the fields 4.Proceed to click 'Save'.
         andThat(admin).attemptsTo(
                 AdminPoiAndStations.addPoiAndStation(
-                        DataTest.spaceChar,
+                        DataTest.spaceCharacter,
                         "Thừa Thiên Huế",
                         "Thừa Thiên Huế",
                         "Thành phố Huế",
@@ -196,7 +196,7 @@ public class AdminPoiAndStationsTest extends CommonTest {
                 AdminPoiAndStations.addPoiAndStation(
                         "Hue Stations",
                         "Thừa Thiên Huế",
-                        DataTest.spaceChar,
+                        DataTest.spaceCharacter,
                         "Thành phố Huế",
                         DataTest.address,
                         DataTest.gMapLinkAndEmbed,
@@ -274,7 +274,7 @@ public class AdminPoiAndStationsTest extends CommonTest {
                         "Hue Stations",
                         "Thừa Thiên Huế",
                         "Thừa Thiên Huế",
-                        DataTest.spaceChar,
+                        DataTest.spaceCharacter,
                         DataTest.address,
                         DataTest.gMapLinkAndEmbed,
                         DataTest.gMapLinkAndEmbed,
@@ -352,7 +352,7 @@ public class AdminPoiAndStationsTest extends CommonTest {
                         "Thừa Thiên Huế",
                         "Thừa Thiên Huế",
                         "Thành phố Huế",
-                        DataTest.spaceChar,
+                        DataTest.spaceCharacter,
                         DataTest.gMapLinkAndEmbed,
                         DataTest.gMapLinkAndEmbed,
                         DataTest.description,
@@ -429,7 +429,7 @@ public class AdminPoiAndStationsTest extends CommonTest {
                         "Thừa Thiên Huế",
                         "Thành phố Huế",
                         DataTest.address,
-                        DataTest.spaceChar,
+                        DataTest.spaceCharacter,
                         DataTest.gMapLinkAndEmbed,
                         DataTest.description,
                         "HueIMG",

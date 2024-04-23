@@ -2,15 +2,23 @@ package tests.passenger;
 
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.questions.Text;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import tasks.ChangePassword;
+import tasks.ChangePasswordActions;
 import tasks.Login;
+import tasks.passenger.PassengerNavbarNavigate;
 import tests.CommonTest;
+import ui.ChangePasswordPopup;
 
-import static net.serenitybdd.screenplay.GivenWhenThen.givenThat;
+import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("PassengerChangePasswordTest")
 public class PassengerChangePasswordTest extends CommonTest {
     @Test
     @Tag("Passenger_Test65")
@@ -20,7 +28,13 @@ public class PassengerChangePasswordTest extends CommonTest {
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
         //Navigate to Passenger Management page and change password
-
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        then(client).attemptsTo(
+                Ensure.that(ChangePasswordPopup.POPUP_CHANGE_PASSWORD).isDisplayed()
+        );
     }
 
     @Test
@@ -30,8 +44,15 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
-
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger(),
+                Click.on(ChangePasswordPopup.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("Old Password"))).isEqualTo("Old Password is required")
+        );
     }
 
     @Test
@@ -42,7 +63,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
         //Navigate to Passenger Management page and change password
-
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "Old Password" field is different from the current password
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh123"),
+                ChangePasswordActions.inputNewPassword("diemquynh123@Diemquynh"),
+                ChangePasswordActions.inputConfirmPassword("diemquynh123@Diemquynh"),
+                Click.on(ChangePasswordPopup.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.MESSAGE_ALERT)).isEqualTo("Wrong password")
+        );
     }
 
     @Test
@@ -52,7 +86,15 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger(),
+                Click.on(ChangePasswordPopup.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is required")
+        );
 
     }
 
@@ -63,7 +105,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field is filled with space characters
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("          "),
+                ChangePasswordActions.inputConfirmPassword("          ")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is required")
+        );
 
     }
 
@@ -74,7 +129,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field is filled <8 characters
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("P1@"),
+                ChangePasswordActions.inputConfirmPassword("P1@")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is invalid")
+        );
 
     }
 
@@ -85,7 +153,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field contains only numbers
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("12345678"),
+                ChangePasswordActions.inputConfirmPassword("12345678")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is invalid")
+        );
 
     }
 
@@ -96,7 +177,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field has only lowercase letters
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("aaaaaaaa"),
+                ChangePasswordActions.inputConfirmPassword("aaaaaaaa")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is invalid")
+        );
 
     }
 
@@ -107,7 +201,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field has only uppercase letters
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("AAAAAAAA"),
+                ChangePasswordActions.inputConfirmPassword("AAAAAAAA")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is invalid")
+        );
 
     }
 
@@ -118,7 +225,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field contains only special characters
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("@@@@@@@@"),
+                ChangePasswordActions.inputConfirmPassword("@@@@@@@@")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is invalid")
+        );
 
     }
 
@@ -129,7 +249,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field does not include 4 types of characters: lowercase, letters, uppercase letters, numbers and special characters
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("passenger@"),
+                ChangePasswordActions.inputConfirmPassword("passenger@")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is invalid")
+        );
 
     }
 
@@ -140,7 +273,21 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field does not include 4 types of characters: lowercase, letters, uppercase letters, numbers and special characters
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("diemquynh"),
+                ChangePasswordActions.inputConfirmPassword("diemquynh"),
+                Click.on(ChangePasswordPopup.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.MESSAGE_ALERT)).isEqualTo("Duplicate entry")
+        );
 
     }
 
@@ -151,7 +298,15 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger(),
+                Click.on(ChangePasswordPopup.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("Confirm Password"))).isEqualTo("Confirm Password is required")
+        );
 
     }
 
@@ -162,7 +317,21 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //The "New Password" field and the "Confirm Password" field do not match
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("Diemquynh00@"),
+                ChangePasswordActions.inputConfirmPassword("Passenger1@"),
+                Click.on(ChangePasswordPopup.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.MESSAGE_ALERT)).isEqualTo("Password do not match")
+        );
 
     }
 
@@ -173,7 +342,20 @@ public class PassengerChangePasswordTest extends CommonTest {
         //Logged in successfully to the passenger page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
-        //Navigate to Passenger Management page and change password
-
+        //Navigate to Partner Management page and change password
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                ChangePassword.toChangePasswordPassenger()
+        );
+        //Fill in all fields with valid information
+        and(client).attemptsTo(
+                ChangePasswordActions.inputOldPassword("diemquynh"),
+                ChangePasswordActions.inputNewPassword("Diemquynh1@"),
+                ChangePasswordActions.inputConfirmPassword("Diemquynh1@"),
+                Click.on(ChangePasswordPopup.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(ChangePasswordPopup.MESSAGE_ALERT)).isEqualTo("Password updated successfully!")
+        );
     }
 }

@@ -20,6 +20,7 @@ import untils.WaitABit;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("AdminProfileSettingsTest")
 public class AdminProfileSettingsTest extends CommonTest {
     @Test
     @Tag("Admin_Test13")
@@ -67,13 +68,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("     "),
-                AdminProfileSettings.inputEmailOfUser("employee40@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee40"),
-                AdminProfileSettings.inputPasswordOfUser("1234Employeer@"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputNameOfUser(DataTest.spaceCharacter)
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Name"))).isEqualTo("Name is required")
@@ -91,13 +86,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser(DataTest.over50char),
-                AdminProfileSettings.inputEmailOfUser("employee41@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee41"),
-                AdminProfileSettings.inputPasswordOfUser("1234Employeer@"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputNameOfUser(DataTest.over50char)
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Name"))).isEqualTo("Name is invalid")
@@ -134,7 +123,7 @@ public class AdminProfileSettingsTest extends CommonTest {
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
                 AdminProfileSettings.inputNameOfUser("employee42"),
-                AdminProfileSettings.inputEmailOfUser("     "),
+                AdminProfileSettings.inputEmailOfUser(DataTest.spaceCharacter),
                 AdminProfileSettings.inputUserNameOfUser("employee42"),
                 AdminProfileSettings.inputPasswordOfUser("1234Employeer@"),
                 AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
@@ -223,13 +212,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee45"),
-                AdminProfileSettings.inputEmailOfUser("employee45@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("          "),
-                AdminProfileSettings.inputPasswordOfUser("1234Employeer@"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputUserNameOfUser(DataTest.spaceCharacter)
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Username"))).isEqualTo("Username is required")
@@ -247,13 +230,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee46"),
-                AdminProfileSettings.inputEmailOfUser("employee46@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser(DataTest.over50char),
-                AdminProfileSettings.inputPasswordOfUser("1234Employeer@"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputUserNameOfUser(DataTest.over50char)
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Username"))).isEqualTo("Username is invalid")
@@ -313,13 +290,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee48"),
-                AdminProfileSettings.inputEmailOfUser("employee48@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee48"),
-                AdminProfileSettings.inputPasswordOfUser("          "),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPasswordOfUser(DataTest.spaceCharacter)
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is required")
@@ -337,13 +308,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee49"),
-                AdminProfileSettings.inputEmailOfUser("employee49@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee49"),
-                AdminProfileSettings.inputPasswordOfUser("1234Ee@"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPasswordOfUser("1234Ee@")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is invalid")
@@ -361,13 +326,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee50"),
-                AdminProfileSettings.inputEmailOfUser("employee50@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee50"),
-                AdminProfileSettings.inputPasswordOfUser("123456789"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPasswordOfUser("123456789")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is invalid")
@@ -385,13 +344,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee51"),
-                AdminProfileSettings.inputEmailOfUser("employee51@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee51"),
-                AdminProfileSettings.inputPasswordOfUser("employeeeeeee"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPasswordOfUser("employeeeeeee")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is invalid")
@@ -409,13 +362,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee52"),
-                AdminProfileSettings.inputEmailOfUser("employee52@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee52"),
-                AdminProfileSettings.inputPasswordOfUser("EMPLOYEE"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPasswordOfUser("EMPLOYEE")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is invalid")
@@ -433,13 +380,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee53"),
-                AdminProfileSettings.inputEmailOfUser("employee53@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee53"),
-                AdminProfileSettings.inputPasswordOfUser("@@@@@@@@@@"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPasswordOfUser("@@@@@@@@@@")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is invalid")
@@ -457,13 +398,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee54"),
-                AdminProfileSettings.inputEmailOfUser("employee54@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee54"),
-                AdminProfileSettings.inputPasswordOfUser("1234Employee"),
-                AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPasswordOfUser("1234Employee")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is invalid")
@@ -499,13 +434,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee55"),
-                AdminProfileSettings.inputEmailOfUser("employee55@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee55"),
-                AdminProfileSettings.inputPasswordOfUser("1234@Employee"),
-                AdminProfileSettings.inputPhoneNumberOfUser("          "),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPhoneNumberOfUser(DataTest.spaceCharacter)
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is required")
@@ -523,13 +452,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee56"),
-                AdminProfileSettings.inputEmailOfUser("employee56@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee56"),
-                AdminProfileSettings.inputPasswordOfUser("1234@Employee"),
-                AdminProfileSettings.inputPhoneNumberOfUser("04537"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPhoneNumberOfUser("04537")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is invalid")
@@ -547,13 +470,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee57"),
-                AdminProfileSettings.inputEmailOfUser("employee57@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee57"),
-                AdminProfileSettings.inputPasswordOfUser("1234@Employee"),
-                AdminProfileSettings.inputPhoneNumberOfUser("04537684316536"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPhoneNumberOfUser("04537684316536")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is invalid")
@@ -571,13 +488,7 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee58"),
-                AdminProfileSettings.inputEmailOfUser("employee58@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee58"),
-                AdminProfileSettings.inputPasswordOfUser("1234@Employee"),
-                AdminProfileSettings.inputPhoneNumberOfUser("ttteeehhhhttttt"),
-                AdminProfileSettings.chooseEmployeeRoleUser("Viewer")
-//                Click.on(AdminPage.BTN_SAVE_NEW_USER)
+                AdminProfileSettings.inputPhoneNumberOfUser("ttteeehhhhttttt")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is invalid")

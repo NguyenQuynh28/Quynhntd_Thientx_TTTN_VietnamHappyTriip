@@ -22,6 +22,7 @@
         <tags></tags>
         <parallel.tests>4</parallel.tests>
         <webdriver.base.url></webdriver.base.url>
+        <serenity.report.base.dir>target/site/serenity</serenity.report.base.dir>
     </properties>
     <dependencies>
         <dependency>
@@ -101,7 +102,8 @@
                     </includes>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
-                        <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
+                        <junit.jupiter.extensions.autodetection.enabled>true
+                        </junit.jupiter.extensions.autodetection.enabled>
                     </systemPropertyVariables>
                     <parallel>classes</parallel>
                     <threadCount>${parallel.tests}</threadCount>
@@ -126,11 +128,30 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>timestamp-property</id>
+                        <goals>
+                            <goal>timestamp-property</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Tạo thuộc tính serenity.report.dir dựa trên thời gian hiện tại -->
+                            <name>serenity.report.dir</name>
+                            <value>${serenity.report.base.dir}/${maven.build.timestamp}</value>
+                            <pattern>yyyyMMdd-HHmmss</pattern>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.version}</version>
                 <configuration>
-                  <tags>${tags}</tags>
+                    <outputDirectory>${serenity.report.dir}</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>

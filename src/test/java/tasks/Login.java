@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import ui.LoginPage;
 import untils.LoadConfig;
+import untils.WaitABit;
 
 public class Login implements Performable {
     private final String auth;
