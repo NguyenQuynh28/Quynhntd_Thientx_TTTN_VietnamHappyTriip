@@ -72,7 +72,7 @@ public class PassengerManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toPassengerManagement(),
                 PassengerManagement.clickUpdate(),
-                PassengerManagement.inputName("               "),
+                PassengerManagement.inputName(DataTest.spaceCharacter),
                 PassengerManagement.clickSave()
         );
         then(client).attemptsTo(
@@ -129,7 +129,7 @@ public class PassengerManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toPassengerManagement(),
                 PassengerManagement.clickUpdate(),
-                PassengerManagement.inputEmail("          "),
+                PassengerManagement.inputEmail(DataTest.spaceCharacter),
                 PassengerManagement.clickSave()
         );
         then(client).attemptsTo(
@@ -205,7 +205,7 @@ public class PassengerManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toPassengerManagement(),
                 PassengerManagement.clickUpdate(),
-                PassengerManagement.inputPhoneNumber("           "),
+                PassengerManagement.inputPhoneNumber(DataTest.spaceCharacter),
                 PassengerManagement.clickSave()
         );
         then(client).attemptsTo(

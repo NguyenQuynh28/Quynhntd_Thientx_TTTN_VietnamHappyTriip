@@ -56,7 +56,7 @@ public class PartnerSignupTest extends CommonTest {
 
         //The "Name" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputName("          ")
+                SignupInfo.inputName(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Name"))).isEqualTo("Name is required")
@@ -168,7 +168,7 @@ public class PartnerSignupTest extends CommonTest {
 
         //The "Phone number" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputPhoneNumber("          ")
+                SignupInfo.inputPhoneNumber(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is required")
@@ -248,7 +248,7 @@ public class PartnerSignupTest extends CommonTest {
 
         //The "Username" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputUserName("          ")
+                SignupInfo.inputUserName(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Username"))).isEqualTo("Username is required")
@@ -318,7 +318,7 @@ public class PartnerSignupTest extends CommonTest {
 
         //The "Password" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputPassword("          ")
+                SignupInfo.inputPassword(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is required")

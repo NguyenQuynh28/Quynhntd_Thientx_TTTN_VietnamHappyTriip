@@ -56,7 +56,7 @@ public class PassengerSignupTest extends CommonTest {
 
         //The "Name" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputName("          ")
+                SignupInfo.inputName(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Name"))).isEqualTo("Name is required")
@@ -168,7 +168,7 @@ public class PassengerSignupTest extends CommonTest {
 
         //The "Phone number" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputPhoneNumber("          ")
+                SignupInfo.inputPhoneNumber(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is required")
@@ -248,7 +248,7 @@ public class PassengerSignupTest extends CommonTest {
 
         //The "Username" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputUserName("          ")
+                SignupInfo.inputUserName(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Username"))).isEqualTo("Username is required")
@@ -318,7 +318,7 @@ public class PassengerSignupTest extends CommonTest {
 
         //The "Password" field is filled with space characters
         when(client).attemptsTo(
-                SignupInfo.inputPassword("          ")
+                SignupInfo.inputPassword(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(SignupPage.ERROR_MESSAGE.of("Password"))).isEqualTo("Password is required")
@@ -463,10 +463,10 @@ public class PassengerSignupTest extends CommonTest {
     @Tag("Passenger_Test28")
     @Title("Passenger_Test28: Message [Register successfully!] is displayed")
     public void passenger_test28() {
-        //Accessed successfully the [PASSENGER SIGN UP] page
+        // Accessed successfully the [PASSENGER SIGN UP] page
         givenThat(client).attemptsTo(Signup.toSignupPassenger());
 
-        //Fill in all fields with valid information
+        // Fill in all fields with valid information
         when(client).attemptsTo(
                 SignupInfo.inputName("Xuan299"),
                 SignupInfo.inputEmail("xuan299@gmail.com"),
