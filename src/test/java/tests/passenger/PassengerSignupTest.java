@@ -463,10 +463,10 @@ public class PassengerSignupTest extends CommonTest {
     @Tag("Passenger_Test28")
     @Title("Passenger_Test28: Message [Register successfully!] is displayed")
     public void passenger_test28() {
-        //Accessed successfully the [PASSENGER SIGN UP] page
+        // Accessed successfully the [PASSENGER SIGN UP] page
         givenThat(client).attemptsTo(Signup.toSignupPassenger());
 
-        //Fill in all fields with valid information
+        // Fill in all fields with valid information
         when(client).attemptsTo(
                 SignupInfo.inputName("Xuan299"),
                 SignupInfo.inputEmail("xuan299@gmail.com"),
