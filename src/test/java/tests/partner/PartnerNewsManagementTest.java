@@ -70,7 +70,7 @@ public class PartnerNewsManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
                 PartnerNewsManagement.toAddNews(),
-                PartnerNewsManagement.inputTitle("          ")
+                PartnerNewsManagement.inputTitle(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE_NEWS.of("Title"))).isEqualTo("Title is required")
@@ -145,7 +145,7 @@ public class PartnerNewsManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
                 PartnerNewsManagement.toAddNews(),
-                PartnerNewsManagement.inputDescription("          ")
+                PartnerNewsManagement.inputDescription(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE_NEWS.of("Description"))).isEqualTo("Description is required")
@@ -268,7 +268,7 @@ public class PartnerNewsManagementTest extends CommonTest {
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
                 Click.on(PartnerPage.LBL_NEWS.of("Happy tripp")),
-                PartnerNewsManagement.inputTitle("          ")
+                PartnerNewsManagement.inputTitle(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE_NEWS.of("Title"))).isEqualTo("Title is required")
@@ -361,7 +361,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 PartnerNavbarNavigate.toNewsManagement(),
                 Click.on(PartnerPage.LBL_NEWS.of("Happy tripp")),
                 Clear.field(PartnerPage.TXT_DESCRIPTION_UPDATE),
-                PartnerNewsManagement.inputDescription("          ")
+                PartnerNewsManagement.inputDescription(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE_NEWS.of("Description"))).isEqualTo("Description is required")
