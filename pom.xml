@@ -22,7 +22,7 @@
         <tags></tags>
         <parallel.tests>4</parallel.tests>
         <webdriver.base.url></webdriver.base.url>
-        <serenity.report.base.dir>target/site/serenity</serenity.report.base.dir>
+        <serenity.report.base.dir>report</serenity.report.base.dir>
     </properties>
     <dependencies>
         <dependency>
@@ -138,9 +138,7 @@
                             <goal>timestamp-property</goal>
                         </goals>
                         <configuration>
-                            <!-- Tạo thuộc tính serenity.report.dir dựa trên thời gian hiện tại -->
                             <name>serenity.report.dir</name>
-                            <value>${serenity.report.base.dir}/${maven.build.timestamp}</value>
                             <pattern>yyyyMMdd-HHmmss</pattern>
                         </configuration>
                     </execution>
@@ -151,7 +149,7 @@
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.version}</version>
                 <configuration>
-                    <outputDirectory>${serenity.report.dir}</outputDirectory>
+                    <outputDirectory>${serenity.report.base.dir}/${serenity.report.dir}</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
