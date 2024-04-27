@@ -14,6 +14,10 @@ public class LoginPage {
             located(By.xpath("//input[@type='password']"));
     public static final Target BTN_LOGIN = Target.the("TextBox password")
             .located(By.xpath("//button[@type='submit']"));
-
-
+    public static final Target LBL_TITLE_LOGIN = Target.the("Label title login")
+            .locatedBy("//h2[contains(text(),'LOGIN')]");
+    public static final Target BTN_LOGGED = Target.the("Button logged")
+            .locatedBy("//div[contains(@class,'logged-in')]");
+    public static final Target BTN_LOG_OUT = Target.the("Button log out")
+            .locatedBy("//li[@aria-label='Log out']");
 }
