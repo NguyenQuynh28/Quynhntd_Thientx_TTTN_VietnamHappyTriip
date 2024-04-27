@@ -1,18 +1,36 @@
-//package questions;
-//
-//import net.serenitybdd.screenplay.Question;
-//
-//public class CompareImage implements Question<Boolean> {
-//
-//    private static String rootDir = System.getProperty("user.dir");
-//    private String pathExpectedImage;
-//    private int percentDifferent = 0;
-//
-//    public CompareImage(String pathExpectedImage) {
-//        this.pathExpectedImage = pathExpectedImage;
-//    }
-//
-//    public static CompareImage imgSLUGBefore() {
-//        return new CompareImage(rootDir + "/src/test/resources/expectedFile/slugBeforeExpectedIMG.png");
-//    }
-//}
+package questions;
+
+import com.github.romankh3.image.comparison.ImageComparison;
+import com.github.romankh3.image.comparison.ImageComparisonUtil;
+import com.github.romankh3.image.comparison.model.ImageComparisonResult;
+import com.github.romankh3.image.comparison.model.ImageComparisonState;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
+
+import java.awt.image.BufferedImage;
+
+public class CompareImage implements Question<Boolean> {
+    private static String rootDir = System.getProperty("user.dir");
+    private String expectedImage;
+    private String actualImage;
+
+    public CompareImage(String expectedImage, String actualImage) {
+        this.expectedImage = expectedImage;
+        this.actualImage = actualImage;
+    }
+
+    public static CompareImage imgProfilePartner() {
+        return new CompareImage(rootDir + "/src/test/resources/takeScreenShot/partnerProfileBeforeIMG.png", rootDir + "/src/test/resources/takeScreenShot/partnerProfileAfterIMG.png");
+    }
+
+    @Override
+    public Boolean answeredBy(Actor actor) {
+        BufferedImage expectedImageBuffer = ImageComparisonUtil.readImageFromResources(expectedImage);
+        BufferedImage actualImageBuffer = ImageComparisonUtil.readImageFromResources(actualImage);
+
+        ImageComparison imageComparison = new ImageComparison(expectedImageBuffer, actualImageBuffer);
+        ImageComparisonResult comparisonResult = imageComparison.compareImages();
+
+        return comparisonResult.getImageComparisonState() == ImageComparisonState.MATCH;
+    }
+}

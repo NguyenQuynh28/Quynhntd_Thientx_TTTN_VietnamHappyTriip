@@ -30,4 +30,10 @@ public class DataTest {
     public static String television = "Television";
     public static String water = "Water";
     public static String wiFi = "WiFi";
+
+    // Update Partner
+    public static String address = "K981/H24/18 Âu Cơ, Phường Hoà Khánh Bắc, Quận Liên Chiểu, Thành phố Đà Nẵng, Việt Nam";
+    public static String over100char = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    public static String taxCode= "0402118153";
+    public static String phoneNumber= "0123456789";
 }

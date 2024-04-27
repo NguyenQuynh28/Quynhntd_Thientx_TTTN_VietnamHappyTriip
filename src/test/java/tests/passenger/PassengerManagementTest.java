@@ -28,7 +28,7 @@ public class PassengerManagementTest extends CommonTest {
     @Test
     @Tag("Passenger_Test50")
     @Title("Passenger_Test50: The passenger management is displayed")
-    public void Passenger_test43() {
+    public void Passenger_test50() {
         // Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
@@ -253,8 +253,27 @@ public class PassengerManagementTest extends CommonTest {
 
     @Test
     @Tag("Passenger_Test62")
-    @Title("Passenger_Test62: [Profile updated successfully!] is displayed")
+    @Title("Passenger_Test62: [Phone number is invalid] is displayed")
     public void Passenger_test62() {
+        // Logged in successfully to the login page
+        givenThat(client).attemptsTo(Login.toPassengerPage());
+
+        //The "Phone number" field is filled a phone number other number
+        when(client).attemptsTo(
+                PassengerNavbarNavigate.toPassengerManagement(),
+                PassengerManagement.clickUpdate(),
+                PassengerManagement.inputPhoneNumber("hai ba bon nam sau"),
+                PassengerManagement.clickSave()
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PassengerPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is invalid")
+        );
+    }
+
+    @Test
+    @Tag("Passenger_Test63")
+    @Title("Passenger_Test63: [Profile updated successfully!] is displayed")
+    public void Passenger_test63() {
         // Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
@@ -273,9 +292,9 @@ public class PassengerManagementTest extends CommonTest {
     }
 
     @Test
-    @Tag("Passenger_Test63")
-    @Title("Passenger_Test63: All information is displayed")
-    public void Passenger_test63() {
+    @Tag("Passenger_Test64")
+    @Title("Passenger_Test64: All information is displayed")
+    public void Passenger_test64() {
         // Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
 
