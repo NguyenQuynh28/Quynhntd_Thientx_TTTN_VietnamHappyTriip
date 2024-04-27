@@ -25,6 +25,8 @@ public class PassengerPage {
             .locatedBy("//button[@class='p-ripple p-element p-button-secondary p-button p-component']");
     public static final Target BTN_BOOKING_NOW = Target.the("Button booking now")
             .locatedBy("//h4[text()='{0}']//ancestor::div[contains(@class,'card')]//p-button[@label='Book Now']");
+    public static final Target BTN_LAST_BOOKING_NOW = Target.the("Button last booking now")
+            .locatedBy("//div[contains(text(),'{0}') and contains(@class,'departure')]//ancestor::div[@class='route-item']//p-button[@label='Book Now']");
     public static final Target BTN_CHOOSE_SEAT = Target.the("Button choose seat")
             .locatedBy("//div[text()='{0}']");
     public static final Target BTN_CHECKOUT = Target.the("Button checkout")

@@ -13,6 +13,10 @@ public class PartnerPage {
             .locatedBy("//input[contains(@placeholder,'Search')]");
     public static final Target ERROR_MESSAGE = Target.the("Error message")
             .locatedBy("//label[contains(text(),'{0}')]//parent::div//small");
+    public static final Target TOAST_MESSAGE = Target.the("Toast message")
+            .locatedBy("//div[contains(@class,'toast-message-text')]//div[contains(@class,'toast-detail')]");
+    public static final Target BTN_CHOOSE_ROUTE_IN_LIST = Target.the("Button choose route in list")
+            .locatedBy("//span[contains(text(),'{0}')]//parent::li");
 
     //Transport Management
     public static final Target NAV_BTN_TRANSPORT_MANAGEMENT = Target.the("Button navigate to transport management")
@@ -85,6 +89,10 @@ public class PartnerPage {
             .located(By.id("MedialLink"));
     public static final Target TXT_DESCRIPTION_PARTNER= Target.the("Text box description")
             .located(By.id("description"));
+    public static final Target TXT_TITLE_PARTNER= Target.the("Text box title")
+            .located(By.id("title"));
+    public static final Target BTN_SAVE_PARTNER= Target.the("Text box title")
+            .locatedBy("//button[@type='submit']");
 
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
@@ -107,6 +115,28 @@ public class PartnerPage {
             .locatedBy("//label[@for='route-schedules']//ancestor::div[contains(@class,'route-schedules')]");
     public static final Target CHK_CHOOSE_DAY = Target.the("Choose day")
             .locatedBy("//span[text()='{0}']");
+    public static final Target TITLE_ROUTE_MANAGEMENT = Target.the("Title route management")
+            .locatedBy("//h4[text()='Add New Route']");
+    public static final Target BTN_ADD_NEW_PICKUP_POINT = Target.the("Button add new pickup point")
+            .locatedBy("//span[text()='Add New Pickup Point']");
+    public static final Target BTN_DELETE_PICKUP_POINT = Target.the("Button delete new pickup point")
+            .locatedBy("//div[@formarrayname='pickUpPoints']//i");
+    public static final Target TXT_PICKUP_POINT_ADDRESS = Target.the("Textbox pickup point address")
+            .locatedBy("//input[contains(@placeholder,'Pickup point') and @formcontrolname]");
+    public static final Target TXT_PICKUP_POINT_TIME = Target.the("Textbox pickup point time")
+            .locatedBy("//input[contains(@placeholder,'Pickup point') and @id='time']");
+    public static final Target ERROR_MESSAGE_PICKUP_AND_DROP_POINT = Target.the("Error message pickup and drop point")
+            .locatedBy("//input[@formcontrolname='{0}' or @id='{0}']//ancestor::div[contains(@class,'gap-2')]//small");
+    public static final Target BTN_ADD_NEW_DROP_POINT = Target.the("Button add new drop point")
+            .locatedBy("//span[text()='Add New Drop Off Point']");
+    public static final Target BTN_DELETE_DROP_POINT = Target.the("Button delete drop of point")
+            .locatedBy("//div[@formarrayname='dropOffPoints']//i");
+    public static final Target TXT_DROP_POINT_ADDRESS = Target.the("Textbox drop point address")
+            .locatedBy("//input[contains(@placeholder,'Drop off point') and @formcontrolname]");
+    public static final Target TXT_DROP_POINT_TIME = Target.the("Textbox drop point time")
+            .locatedBy("//input[contains(@placeholder,'Drop off point') and @id='time']");
+    public static final Target BTN_X = Target.the("Button X Province/City")
+            .locatedBy("//label[contains(text(),'{0}')]//ancestor::div[contains(@class,'py-2')]//*[local-name()='svg' and contains(@class,'clear')]");
 
     //News Management
     public static final Target NAV_BTN_NEWS_MANAGEMENT = Target.the("Button navigate to news management")

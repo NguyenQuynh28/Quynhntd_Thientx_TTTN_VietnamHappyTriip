@@ -20,10 +20,10 @@ public class CommonTest {
     protected WebDriver clientBrowser;
 
     @CastMember(name = "Admin")
-    protected Actor admin;
+    public Actor admin;
 
     @CastMember(name = "Partner/Passenger")
-    protected Actor client;
+    public Actor client;
 
     @BeforeEach
     public void start() {
