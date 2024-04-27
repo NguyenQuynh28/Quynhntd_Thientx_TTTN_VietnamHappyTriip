@@ -26,6 +26,15 @@ public class AdminPage {
             .locatedBy("//span[text()='{0}']");
     public static final Target LBL_CODE = Target.the("Label code")
             .locatedBy("//td[text()=' {0} ']");
+    public static Target OPTION_BOOKING_IN_LIST(String name) {
+        return Target.the("Option booking in list")
+                .locatedBy("//span[contains(text(),'" + name + "')]//ancestor::tr//p-button[@label='Confirm']//ancestor::tr");
+    }
+    public static Target BTN_CONFIRM_BOOKING(String name) {
+        return Target.the("Button confirm booking")
+                .locatedBy("//span[contains(text(),'" + name + "')]//ancestor::tr//p-button[@label='Confirm']");
+    }
+
 
     //Profile & Settings
     public static final Target NAV_BTN_PROFILE_SETTINGS = Target.the("Button navigate to profile & settings")
@@ -80,6 +89,14 @@ public class AdminPage {
     //Sales report
     public static final Target NAV_BTN_SALES_REPORT = Target.the("Button navigate to sales report")
             .locatedBy("//div[@aria-label='Sales Report']");
+    public static final Target TABLE_REVENUE_OF_MONTH = Target.the("Table revenue of month")
+            .locatedBy("//p-tabpanel[@header='Revenue of month']//canvas");
+    public static final Target TABLE_REVENUE_OF_YEAR = Target.the("Table revenue of year")
+            .locatedBy("//p-tabpanel[@header='Revenue of year']//canvas");
+    public static final Target BTN_TAB_OF_MONTH = Target.the("TButton tab revenue of month")
+            .locatedBy("//span[text()='Revenue of month']");
+    public static final Target BTN_TAB_OF_YEAR = Target.the("Button tab revenue of year")
+            .locatedBy("//span[text()='Revenue of year']");
 
     //POI & Station
     public static final Target NAV_BTN_POI_STATIONS = Target.the("Button navigate to POI & stations")
@@ -112,10 +129,56 @@ public class AdminPage {
             .located(By.id("description"));
     public static final Target BTN_UPLOAD_IMAGE = Target.the("Button upload image")
             .located(By.xpath("//input[@accept='image/*'][1]"));
+    public static final Target IMAGE_UPLOAD_SUCCESS = Target.the("Image upload success")
+            .locatedBy("//div[@class='image']//img[not(contains(@src,'dummy'))]");
+    public static final Target TOAST_MESSAGE = Target.the("Toast message")
+            .locatedBy("//div[contains(@class,'toast-message-text')]//div[contains(@class,'toast-detail')]");
+    public static final Target BTN_CANCEL_POI_STATIONS = Target.the("Button cancel Poi & Stations")
+            .locatedBy("//p-button[@label='Cancel']");
+    public static final Target TXT_SEARCH_POI_STATIONS = Target.the("Textbox search Poi & Stations")
+            .locatedBy("//input[@placeholder='Search POI & Station']");
+    public static final Target LBL_EMPTY_RESULT = Target.the("Label empty result")
+            .locatedBy("//li[contains(@class,'empty-message')]");
+    public static final Target OPTION_SEARCH_RESULT = Target.the("Option search result")
+            .locatedBy("//ul[@role='listbox']//span[contains(text(),'{0}')][1]");
+    public static final Target BTN_REMOVE_POI_STATIONS = Target.the("Button remove Poi & Stations")
+            .locatedBy("//span[text()='Remove']");
 
     //Partner Management
     public static final Target NAV_BTN_PARTNER_MANAGEMENT = Target.the("Button navigate to partner management")
             .locatedBy("//div[@aria-label='Partner Management']");
+
+    public static Target OPTION_PARTNER_IN_LIST(String status, String name) {
+        return Target.the("Option partner in list")
+                .locatedBy("//span[text()='" + status + "']//ancestor::tr//td[contains(text(),'" + name + "')]");
+    }
+
+    public static Target POPUP_PARTNER_DETAIL = Target.the("Popup partner detail")
+            .locatedBy("//span[text()='Partner details']//ancestor::div[@role='dialog']");
+    public static Target BTN_NEXT_IN_LIST = Target.the("Button next in list")
+            .locatedBy("//button[contains(@class,'paginator-next')]");
+    public static Target BTN_ACCEPT = Target.the("Button accept")
+            .locatedBy("//button//span[text()='Accept']");
+    public static Target BTN_DENY = Target.the("Button deny")
+            .locatedBy("//button//span[text()='Deny']");
+    public static Target ALERT_CONFIRM = Target.the("Alert accept")
+            .locatedBy("//div[@role='alertdialog']//span[contains(@class,'confirm-popup-message')]");
+    public static Target BTN_YES = Target.the("Button yes in alert")
+            .locatedBy("//div[@role='alertdialog']//button[@aria-label='Yes']");
+    public static Target BTN_NO = Target.the("Button no in alert")
+            .locatedBy("//div[@role='alertdialog']//button[@aria-label='No']");
+    public static Target TITLE_PARTNER_MANAGEMENT = Target.the("Title partner management page")
+            .locatedBy("//h2[text()='Partner Management']");
+    public static Target TXT_SEARCH_PARTNER = Target.the("Textbox search partner")
+            .locatedBy("//input[@placeholder='Search keyword']");
+    public static Target LBL_NO_PARTNER_FOUND = Target.the("Label no partner found")
+            .locatedBy("//td[text()='No partners found.']");
+    public static Target PARTNER_SEARCH_RESULT = Target.the("Partner search result")
+            .locatedBy("//td[contains(text(),'{0}')]//parent::tr");
+    public static Target BTN_CLEAR_SEARCH = Target.the("Button clear search")
+            .locatedBy("//span[text()='Clear']");
+    public static Target LIST_PARTNER_MANAGEMENT = Target.the("List partner management")
+            .locatedBy("//table[@role='table']");
 
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
@@ -136,9 +199,14 @@ public class AdminPage {
             .locatedBy("//span[@class='p-paginator-current ng-star-inserted']");
     public static final Target BTN_RECONFIRM = Target.the("Button reconfirm information")
             .locatedBy("//button[@aria-label='{0}']");
+
     public static Target LBL_ROUTE(String status, String route) {
         return Target.the("Label route")
                 .locatedBy(String.format("//span[text()='" + status + "']//ancestor::tr//td[text()=' " + route + " ']"));
     }
 
+    public static Target OPTION_ROUTE_IN_LIST(String status, String name) {
+        return Target.the("Option route in list")
+                .locatedBy("//td[contains(text(),'" + name + "')]//ancestor::tr//span[contains(text(),'" + status + "')]");
+    }
 }

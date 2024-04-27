@@ -37,4 +37,15 @@ public class AdminNavbarNavigate {
                 Click.on(AdminPage.NAV_BTN_ROUTE_MANAGEMENT)
         );
     }
+    public static Performable toPartnerManagement() {
+        return Task.where("{0} navigate to partner management",
+                Click.on(AdminPage.NAV_BTN_PARTNER_MANAGEMENT)
+        );
+    }
+
+    public static Performable toSalesReport() {
+        return Task.where("{0} navigate to sales report",
+                Click.on(AdminPage.NAV_BTN_SALES_REPORT)
+        );
+    }
 }

@@ -7,4 +7,6 @@ public class DataTest {
     public static String description = "Giờ bán vé: 7:30 - 19:30";
     public static String over100Char = "2 Bùi Thị Xuân, Thành phố Huế, Tỉnh Thừa Thiên Huếưerthyjuhgfdsasdefgrthyjukgvrgtiuheruyfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
     public static String spaceCharacter = "                    ";
+    public static String taxCode = "0402118153";
+    public static String differentAlphanumeric = "aaaaa";
 }
