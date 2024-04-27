@@ -21,6 +21,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("PassengerManagementTest")
 public class PassengerManagementTest extends CommonTest {
     /**
      * Update Passenger

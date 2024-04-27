@@ -14,36 +14,37 @@ public class AdminProfileSettings {
         );
     }
 
-    public static Performable inputNameOfUser(String value){
+    public static Performable inputNameOfUser(String value) {
         return Task.where("{0} enter name: " + value,
-        Actions.inputData(AdminPage.TXT_NAME, value));
+                Actions.inputData(AdminPage.TXT_NAME, value)
+        );
     }
 
-    public static Performable inputEmailOfUser(String value){
+    public static Performable inputEmailOfUser(String value) {
         return Task.where("{0} enter email: " + value,
                 Actions.inputData(AdminPage.TXT_EMAIL, value)
         );
     }
 
-    public static Performable inputUserNameOfUser(String value){
+    public static Performable inputUserNameOfUser(String value) {
         return Task.where("{0} enter username: " + value,
                 Actions.inputData(AdminPage.TXT_USERNAME, value)
         );
     }
 
-    public static Performable inputPasswordOfUser(String value){
+    public static Performable inputPasswordOfUser(String value) {
         return Task.where("{0} enter password: " + value,
                 Actions.inputData(AdminPage.TXT_PASSWORD, value)
         );
     }
 
-    public static Performable inputPhoneNumberOfUser(String value){
+    public static Performable inputPhoneNumberOfUser(String value) {
         return Task.where("{0} enter phone number: " + value,
                 Actions.inputData(AdminPage.TXT_PHONE_NUMBER, value)
         );
     }
 
-    public static Performable chooseEmployeeRoleUser(String value){
+    public static Performable chooseEmployeeRoleUser(String value) {
         return Task.where("{0} choose employee role: " + value,
                 Actions.chooseOption(AdminPage.DRP_EMPLOYEE_ROLE, AdminPage.OPT_EMPLOYEE_ROLE, value)
         );

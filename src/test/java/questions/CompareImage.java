@@ -19,8 +19,8 @@ public class CompareImage implements Question<Boolean> {
         this.actualImage = actualImage;
     }
 
-    public static CompareImage imgProfilePartner() {
-        return new CompareImage(rootDir + "/src/test/resources/takeScreenShot/partnerProfileBeforeIMG.png", rootDir + "/src/test/resources/takeScreenShot/partnerProfileAfterIMG.png");
+    public static CompareImage imgProfilePartner(String beforeImg, String afterImg) {
+        return new CompareImage(rootDir + "/src/test/resources/takeScreenShot/" + beforeImg + ".png", rootDir + "/src/test/resources/takeScreenShot/" + afterImg + ".png");
     }
 
     @Override

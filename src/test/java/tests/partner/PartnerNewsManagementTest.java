@@ -395,7 +395,7 @@ public class PartnerNewsManagementTest extends CommonTest {
         //Logged in successfully to the partner page
         givenThat(client).attemptsTo(Login.toPartnerPage());
 
-        //Navigate to News Management page and search user
+        //Navigate to News Management page and search News
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
                 Actions.inputData(PartnerPage.TXT_SEARCH, "Quang Nam")
@@ -407,12 +407,12 @@ public class PartnerNewsManagementTest extends CommonTest {
 
     @Test
     @Tag("Partner_Test185")
-    @Title("Partner_Test185: Message [No bookings found.] is displayed")
+    @Title("Partner_Test185: Message [No results found] is displayed")
     public void partner_test185() {
         //Logged in successfully to the partner page
         givenThat(client).attemptsTo(Login.toPartnerPage());
 
-        //Navigate to News Management page and search user
+        //Navigate to News Management page and search News
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
                 Actions.inputData(PartnerPage.TXT_SEARCH, "aaaaaaaaaa")
