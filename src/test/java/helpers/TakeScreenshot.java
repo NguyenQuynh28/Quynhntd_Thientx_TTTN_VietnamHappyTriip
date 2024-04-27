@@ -14,20 +14,22 @@ import java.io.IOException;
 
 public class TakeScreenshot implements Performable {
     private final Target target;
+    private final String nameOfImg;
 
-    public TakeScreenshot(Target target) {
+    public TakeScreenshot(Target target, String nameOfImg) {
         this.target = target;
+        this.nameOfImg = nameOfImg;
     }
 
-    public static TakeScreenshot ofElement(Target target) {
-        return Tasks.instrumented(TakeScreenshot.class, target);
+    public static TakeScreenshot ofElement(Target target, String nameOfImg) {
+        return Tasks.instrumented(TakeScreenshot.class, target, nameOfImg);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         File screenshot = (target.resolveFor(actor)).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshot, new File(LoadConfig.getScreenshotPath()));
+            FileUtils.copyFile(screenshot, new File(LoadConfig.getScreenshotPath(nameOfImg)));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

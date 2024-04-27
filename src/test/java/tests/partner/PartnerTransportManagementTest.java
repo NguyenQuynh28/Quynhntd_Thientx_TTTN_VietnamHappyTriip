@@ -285,8 +285,8 @@ public class PartnerTransportManagementTest extends CommonTest {
 
         //Navigate to Transport Details page and click any transport in the listbox
         when(client).attemptsTo(
-        PartnerNavbarNavigate.toTransportManagement(),
-        Click.on(PartnerPage.LBL_TRANSPORT.of("Bus 7"))
+                PartnerNavbarNavigate.toTransportManagement(),
+                Click.on(PartnerPage.LBL_TRANSPORT.of("Bus 7"))
         );
         then(client).attemptsTo(
                 Ensure.that(PartnerPage.TITLE_TRANSPORT_DETAILS).isDisplayed()
@@ -409,6 +409,59 @@ public class PartnerTransportManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_NEXT),
                 Click.on(PartnerPage.BTN_COMPLETE),
                 Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is updated successfully")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test47")
+    @Title("Partner_Test47: Message [Utility is required] is displayed")
+    public void partner_test47() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+        //Navigate to Transport Management page and search transport
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toTransportManagement(),
+                Click.on(PartnerPage.LST_TRANSPORT.of("Bus 1"))
+        );
+
+        // Not select all utility checkboxes
+        for (int i = 1; i <= 50; i++) {
+            boolean check = PartnerPage.CHK_UTILITY_CHOSE.resolveFor(client).isClickable();
+            if (check) {
+                client.attemptsTo(
+                        Click.on(PartnerPage.CHK_UTILITY_CHOSE)
+                );
+            } else {
+                break;
+            }
+        }
+        andThat(client).attemptsTo(
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PartnerPage.MESSAGE_ERROR_UTILITY)).isEqualTo("Utility is required")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test48")
+    @Title("Partner_Test48: Message [Transport is updated successfully] is displayed")
+    public void partner_test48() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+        //Navigate to Transport Management page and search transport
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toTransportManagement(),
+                Click.on(PartnerPage.LST_TRANSPORT.of("Bus 1")),
+                Click.on(PartnerPage.CHK_UTILITY.of("Pillow")),
+                WaitABit.inSecond(4)
+                        .then(
+                                Click.on(PartnerPage.BTN_SAVE)
+                        )
         );
         then(client).attemptsTo(
                 WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),

@@ -2,9 +2,12 @@ package tasks.partner;
 
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.targets.Target;
 import tasks.Actions;
 import ui.PartnerPage;
+import untils.WaitABit;
 
 public class PartnerTransportManagement {
     public static Performable inputNameTransport(String value) {
@@ -41,6 +44,52 @@ public class PartnerTransportManagement {
         return Task.where("{0} import image",
                 Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, value, type)
         );
+    }
+
+    public static Performable deleteData(Target target) {
+        return Task.where("{0} delete data",
+                Clear.field(target)
+        );
+    }
+
+    public static Performable inputNamePartner(String value) {
+        return Task.where("{0} enter name of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_NAME, value));
+    }
+
+    public static Performable inputTaxCodePartner(String value) {
+        return Task.where("{0} enter tax code of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_TAX_CODE, value));
+    }
+
+    public static Performable inputAddressPartner(String value) {
+        return Task.where("{0} enter address of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_ADDRESS, value));
+    }
+
+    public static Performable inputEmailPartner(String value) {
+        return Task.where("{0} enter email of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_EMAIL, value));
+    }
+
+    public static Performable inputPhoneNumberPartner(String value) {
+        return Task.where("{0} enter phone number of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_PHONE_NUMBER, value));
+    }
+
+    public static Performable inputTitlePartner(String value) {
+        return Task.where("{0} enter title of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_TITLE_PARTNER, value));
+    }
+
+    public static Performable inputMediaLinkPartner(String value) {
+        return Task.where("{0} enter media link of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_MEDIA_LINK, value));
+    }
+
+    public static Performable inputDescriptionPartner(String value) {
+        return Task.where("{0} enter description of transport: " + value,
+                Actions.inputData(PartnerPage.TXT_DESCRIPTION_PARTNER, value));
     }
 
 }

@@ -23,15 +23,17 @@ public class LoadConfig {
         return EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments." + auth + ".password");
     }
 
+    public static String getUserNamePartner30(String auth) {
+        return EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments." + auth + ".username30");
+    }
+
+    public static String getPasswordPartner30(String auth) {
+        return EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments." + auth + ".password30");
+    }
     public static String getImagePath(String value, String type) {
         return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.imagePath") + value + type;
     }
-
-    public static String getScreenshotPath() {
-        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.screenShotPath") + "image.png";
-    }
-
-    public static String getExpectedPath(String name) {
-        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.expectedPath") + name + ".png";
+    public static String getScreenshotPath(String nameOfIMG) {
+        return System.getProperty("user.dir") + EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("enviroments.screenShotPath") + nameOfIMG + ".png";
     }
 }

@@ -67,6 +67,12 @@ public class PartnerPage {
             .locatedBy("//li[@aria-label='{0}']");
     public static final Target BTN_SAVE = Target.the("Button save to transport")
             .locatedBy("//p-button[@type='submit']");
+    public static final Target LST_TRANSPORT = Target.the("List box transport")
+            .locatedBy("//li[@aria-label='{0}']");
+    public static final Target CHK_UTILITY_CHOSE = Target.the("Check box utility were chosen")
+            .locatedBy("//div[contains(@class, 'input-container')]//div[contains(@class, 'p-highlight')]");
+    public static final Target MESSAGE_ERROR_UTILITY = Target.the("Message error of utility")
+            .locatedBy("//div[contains(@class,'utility')]//small//strong");
 
     //Partner Management
     public static final Target NAV_BTN_PARTNER_MANAGEMENT = Target.the("Button navigate to partner management")
@@ -87,10 +93,14 @@ public class PartnerPage {
             .located(By.id("title"));
     public static final Target TXT_MEDIA_LINK = Target.the("Text box media link")
             .located(By.id("MedialLink"));
-    public static final Target TXT_DESCRIPTION_PARTNER= Target.the("Text box description")
+    public static final Target TXT_DESCRIPTION_PARTNER = Target.the("Text box description")
             .located(By.id("description"));
-    public static final Target TXT_TITLE_PARTNER= Target.the("Text box title")
-            .located(By.id("title"));
+    public static final Target MESSAGE_ERROR = Target.the("Message error")
+            .locatedBy("//div[contains(@class,'input-container')]//small//strong");
+    public static final Target BTN_CANCEL_INFO_PARTNER = Target.the("Button cancel")
+            .locatedBy("//p-button[@label='Cancel']");
+    public static final Target TAKE_SCREENSHOT_PARTNER_PROFILE = Target.the("Take Screenshot partner profile")
+            .locatedBy("//div[contains(@class,'px-6')]");
     public static final Target BTN_SAVE_PARTNER= Target.the("Text box title")
             .locatedBy("//button[@type='submit']");
 
