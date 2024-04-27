@@ -279,7 +279,7 @@ public class PassengerChangePasswordTest extends CommonTest {
                 PassengerNavbarNavigate.toPassengerManagement(),
                 ChangePassword.toChangePasswordPassenger()
         );
-        //The "New Password" field does not include 4 types of characters: lowercase, letters, uppercase letters, numbers and special characters
+        //The "New Password" field matches old password
         and(client).attemptsTo(
                 ChangePasswordActions.inputOldPassword("diemquynh"),
                 ChangePasswordActions.inputNewPassword("diemquynh"),

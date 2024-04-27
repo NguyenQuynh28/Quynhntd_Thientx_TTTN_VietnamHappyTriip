@@ -271,7 +271,7 @@ public class PartnerChangePasswordTest extends CommonTest {
                 PartnerNavbarNavigate.toPartnerManagement(),
                 ChangePassword.toChangePasswordPartner()
         );
-        //The "New Password" field does not include 4 types of characters: lowercase, letters, uppercase letters, numbers and special characters
+        //The "New Password" field matches old password
         and(client).attemptsTo(
                 ChangePasswordActions.inputOldPassword("partner1"),
                 ChangePasswordActions.inputNewPassword("partner1"),
@@ -340,8 +340,8 @@ public class PartnerChangePasswordTest extends CommonTest {
         //Fill in all fields with valid information
         and(client).attemptsTo(
                 ChangePasswordActions.inputOldPassword("partner1"),
-                ChangePasswordActions.inputNewPassword("Partner1@"),
-                ChangePasswordActions.inputConfirmPassword("Partner1@"),
+                ChangePasswordActions.inputNewPassword("partner1"),
+                ChangePasswordActions.inputConfirmPassword("partner1"),
                 Click.on(ChangePasswordPopup.BTN_SAVE)
         );
         then(client).attemptsTo(

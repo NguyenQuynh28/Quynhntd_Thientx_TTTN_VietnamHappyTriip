@@ -28,7 +28,7 @@ public class PartnerManagement {
     }
     public static Performable inputTitle(String value) {
         return Task.where("{0} enter title: " + value,
-                Actions.inputData(PartnerPage.TXT_TITLE, value));
+                Actions.inputData(PartnerPage.TXT_TITLE_PARTNER, value));
     }
     public static Performable inputMediaLink(String value) {
         return Task.where("{0} enter media link: " + value,
@@ -36,6 +36,6 @@ public class PartnerManagement {
     }
     public static Performable inputDescription(String value) {
         return Task.where("{0} enter description: " + value,
-                Actions.inputData(PartnerPage.TXT_DESCRIPTION, value));
+                Actions.inputData(PartnerPage.TXT_DESCRIPTION_PARTNER, value));
     }
 }

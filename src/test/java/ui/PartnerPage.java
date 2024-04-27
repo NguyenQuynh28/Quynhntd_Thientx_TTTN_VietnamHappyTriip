@@ -79,6 +79,8 @@ public class PartnerPage {
             .located(By.id("email"));
     public static final Target TXT_PHONE_NUMBER = Target.the("Text box phone number")
             .located(By.id("phoneNumber"));
+    public static final Target TXT_TITLE_PARTNER = Target.the("Text box title")
+            .located(By.id("title"));
     public static final Target TXT_MEDIA_LINK = Target.the("Text box media link")
             .located(By.id("MedialLink"));
     public static final Target TXT_DESCRIPTION_PARTNER= Target.the("Text box description")
