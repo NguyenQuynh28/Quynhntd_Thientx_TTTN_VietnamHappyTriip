@@ -17,13 +17,28 @@ import tasks.partner.PartnerNavbarNavigate;
 import tasks.partner.PartnerRouteManagement;
 import tests.CommonTest;
 import ui.PartnerPage;
-import untils.WaitABit;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 public class PartnerRouteManagementTest extends CommonTest {
+    @Test
+    @Tag("Partner_Test112")
+    @Title("Partner_Test112: Navigates to the “Add New Route” page")
+    public void partner_test112() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Add New Route page
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toRouteManagement()
+        );
+        then(client).attemptsTo(
+                Ensure.that(PartnerPage.TITLE_ADD_NEW_ROUTE).isDisplayed()
+        );
+    }
+
     @Test
     @Tag("Partner_Test113")
     @Title("Test113: The system displays the message 'Name is required.'")

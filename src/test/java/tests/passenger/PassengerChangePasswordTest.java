@@ -1,5 +1,6 @@
 package tests.passenger;
 
+import model.DataTest;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Click;
@@ -113,8 +114,8 @@ public class PassengerChangePasswordTest extends CommonTest {
         //The "New Password" field is filled with space characters
         and(client).attemptsTo(
                 ChangePasswordActions.inputOldPassword("diemquynh"),
-                ChangePasswordActions.inputNewPassword("          "),
-                ChangePasswordActions.inputConfirmPassword("          ")
+                ChangePasswordActions.inputNewPassword(DataTest.spaceCharacter),
+                ChangePasswordActions.inputConfirmPassword(DataTest.spaceCharacter)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(ChangePasswordPopup.ERROR_MESSAGE.of("New Password"))).isEqualTo("New Password is required")

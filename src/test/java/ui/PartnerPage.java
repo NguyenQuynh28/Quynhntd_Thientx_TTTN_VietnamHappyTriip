@@ -95,6 +95,8 @@ public class PartnerPage {
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
             .locatedBy("//div[@aria-label='Route Management']");
+    public static final Target TITLE_ADD_NEW_ROUTE = Target.the("Title Add News")
+            .locatedBy("//h4[text()='Add New Route']");
     public static final Target TXT_PRICE = Target.the("Text box price")
             .locatedBy("//input[@id='price']");
     public static final Target TXT_TIME = Target.the("Text box time")

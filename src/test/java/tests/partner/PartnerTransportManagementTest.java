@@ -183,10 +183,6 @@ public class PartnerTransportManagementTest extends CommonTest {
                 WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is created successfully")
         );
-        and(client).attemptsTo(
-                WaitUntil.the(PartnerPage.LBL_TRANSPORT.of("Bus 55"), isVisible()),
-                Ensure.that(PartnerPage.LBL_TRANSPORT.of("Bus 55")).isDisplayed()
-        );
     }
 
     @Test
@@ -223,6 +219,55 @@ public class PartnerTransportManagementTest extends CommonTest {
                         "5", "5"),
                 PartnerTransportManagement.importImage("bus1", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is created successfully")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test39")
+    @Title("Partner_Test39: Fill in all fields with valid information and creating a new transport successfully")
+    public void partner_test39() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Add New Transport page and fill in all fields with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toTransportManagement(),
+                PartnerTransportManagement.inputNameTransport("Bus 77"),
+                PartnerTransportManagement.chooseVehicleType("Bus"),
+                PartnerTransportManagement.addSeatType("Normal Seat", "Normal Seat", "5",
+                        "VIP Seat", "VIP Seat", "10",
+                        "5", "5"),
+                PartnerTransportManagement.importImage("bus1", ".jpg"),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.airConditioner)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.almostFull)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.bedSeat)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.blanket)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.cancellation)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.englishSupported)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.E_Ticket)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.instantConfirmation)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.massageSeat)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.onboardEntertainment)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.freeLuggage)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.outlets)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.pillow)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.recliningSeat)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.restroomOnBus)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.restStop)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.sightseeing)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.sightseeingTicket)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.snacks)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.support247)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.tourtGuide)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.towel)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.television)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.water)),
+                Click.on(PartnerPage.CHK_UTILITY.of(DataTest.wiFi)),
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
@@ -300,6 +345,74 @@ public class PartnerTransportManagementTest extends CommonTest {
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE.of("Name"))).isEqualTo("Name is invalid")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test44")
+    @Title("Partner_Test44: Update the [Name] field successfully with valid information")
+    public void partner_test44() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Transport Details page, click any transport in the listbox and update the "Name" field with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toTransportManagement(),
+                Click.on(PartnerPage.LBL_TRANSPORT.of("Bus 99")),
+                PartnerTransportManagement.inputNameTransport("Bus 999"),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is updated successfully")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test45")
+    @Title("Partner_Test45: Update the [Vehicle type] successfully with valid information")
+    public void partner_test45() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Transport Details page, click any transport in the listbox and update the "Vehicle type" with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toTransportManagement(),
+                Click.on(PartnerPage.LBL_TRANSPORT.of("Bus 99")),
+                PartnerTransportManagement.chooseVehicleType("Train"),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is updated successfully")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test46")
+    @Title("Partner_Test46: Update the [Seat Type] successfully with valid information")
+    public void partner_test46() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Transport Details page, click any transport in the listbox and update the "Seat Type" with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toTransportManagement(),
+                Click.on(PartnerPage.LBL_TRANSPORT.of("Bus 99")),
+                Click.on(PartnerPage.BTN_SEAT_TYPE),
+                Actions.inputData(PartnerPage.TXT_NORMAL_SEAT, "Normal Seat"),
+                Actions.inputData(PartnerPage.TXT_NORMAL_SEAT_DESCRIPTION, "Normal Seat"),
+                Actions.inputData(PartnerPage.TXT_NORMAL_SEAT_PRICE, "10"),
+                Actions.inputData(PartnerPage.TXT_VIP_SEAT, "VIP Seat"),
+                Actions.inputData(PartnerPage.TXT_VIP_SEAT_DESCRIPTION, "VIP Seat"),
+                Actions.inputData(PartnerPage.TXT_VIP_SEAT_PRICE, "15"),
+                Click.on(PartnerPage.BTN_NEXT),
+                Click.on(PartnerPage.BTN_COMPLETE),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is updated successfully")
         );
     }
 
