@@ -12,6 +12,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import tasks.Actions;
 import tasks.Login;
 import tasks.partner.PartnerNavbarNavigate;
 import tasks.partner.PartnerRouteManagement;
@@ -585,6 +586,40 @@ public class PartnerRouteManagementTest extends CommonTest {
         then(client).attemptsTo(
                 Ensure.that(PartnerPage.TOAST_MESSAGE).isDisplayed(),
                 Ensure.that(PartnerPage.TOAST_MESSAGE).hasText("Route is created successfully")
+        );
+    }
+          
+    @Test
+    @Tag("Partner_Test143")
+    @Title("Partner_Test143: Display the Route to search for.")
+    public void partner_test143() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Route Management page and search route
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toRouteManagement(),
+                Actions.inputData(PartnerPage.TXT_SEARCH, "Quang Nam")
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PartnerPage.LBL_LIST_NEWS)).contains("Quang Nam")
+        );
+    }
+          
+    @Test
+    @Tag("Partner_Test144")
+    @Title("Partner_Test144: Message [No results found] is displayed")
+    public void partner_test144() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Route Management page and search route
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toRouteManagement(),
+                Actions.inputData(PartnerPage.TXT_SEARCH, "aaaaaaaaaa")
+        );
+        then(client).attemptsTo(
+                Ensure.that(PartnerPage.MESSAGE_SEARCH_NO_RESULTS).isDisplayed()
         );
     }
 

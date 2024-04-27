@@ -22,6 +22,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("PassengerBookingHistoryTest")
 public class PassengerBookingHistoryTest extends CommonTest {
     /**
      * Booking Ticket

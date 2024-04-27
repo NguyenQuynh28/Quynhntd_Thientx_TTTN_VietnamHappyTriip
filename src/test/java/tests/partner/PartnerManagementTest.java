@@ -143,4 +143,184 @@ public class PartnerManagementTest extends CommonTest {
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
+
+    @Test
+    @Tag("Partner_Test87")
+    @Title("Partner_Test87: Error [Email is required] is displayed")
+    public void partner_test87() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and clear the "Email" field
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                Clear.field(PartnerPage.TXT_EMAIL),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE.of("Email"))).isEqualTo("Email is required")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test88")
+    @Title("Partner_Test88: Error [Partner profile is in view mode because it was accepted!] is displayed")
+    public void partner_test88() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and update the "Email" field with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                PartnerManagement.inputEmail("partner@gmail.com"),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test89")
+    @Title("Partner_Test89: Error [Phone number is required] is displayed")
+    public void partner_test89() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and clear the "Phone number" field
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                Clear.field(PartnerPage.TXT_PHONE_NUMBER),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE.of("Phone number"))).isEqualTo("Phone number is required")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test90")
+    @Title("Partner_Test90: Error [Partner profile is in view mode because it was accepted!] is displayed")
+    public void partner_test90() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and update the "Phone number" field with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                PartnerManagement.inputPhoneNumber("0123456789"),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test91")
+    @Title("Partner_Test91: Error [Title is required] is displayed")
+    public void partner_test91() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and clear the "Title" field
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                Clear.field(PartnerPage.TXT_TITLE_PARTNER),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE.of("Title"))).isEqualTo("Title is required")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test92")
+    @Title("Partner_Test92: Error [Partner profile is in view mode because it was accepted!] is displayed")
+    public void partner_test92() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and update the "Title" field with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                PartnerManagement.inputTitle("partner"),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test93")
+    @Title("Partner_Test93: Error [MedialLink is required] is displayed")
+    public void partner_test93() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and clear the "MedialLink" field
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                Clear.field(PartnerPage.TXT_MEDIA_LINK),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE.of("MedialLink"))).isEqualTo("MedialLink is required")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test94")
+    @Title("Partner_Test94: Error [Partner profile is in view mode because it was accepted!] is displayed")
+    public void partner_test94() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and update the "MedialLink" field with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                PartnerManagement.inputMediaLink("partner@gmail.com"),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test95")
+    @Title("Partner_Test95: Error [Description is required] is displayed")
+    public void partner_test95() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and clear the "Description" field
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                Clear.field(PartnerPage.TXT_DESCRIPTION_PARTNER),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(Text.of(PartnerPage.ERROR_MESSAGE.of("Description"))).isEqualTo("Description is required")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test96")
+    @Title("Partner_Test96: Error [Partner profile is in view mode because it was accepted!] is displayed")
+    public void partner_test96() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Partner profile page and update the "Description" field with valid information
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toPartnerManagement(),
+                PartnerManagement.inputDescription("partner"),
+                Click.on(PartnerPage.BTN_SAVE)
+        );
+        then(client).attemptsTo(
+                Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
+        );
+    }
 }
