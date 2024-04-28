@@ -507,7 +507,8 @@ public class AdminRouteManagementTest extends CommonTest {
                 AdminNavbarNavigate.toRouteManagement()
         );
         then(admin).should(
-                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("AZrowuuM", "Showing 16 to 19"))
+//                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("AZrowuuM", "Showing 16 to 19"))
+                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("AZrowuuM"))
         );
     }
 }

@@ -175,4 +175,6 @@ public class PartnerPage {
             .locatedBy("//ul[@class='p-listbox-list']//li//span");
     public static final Target BTN_REMOVE_NEWS = Target.the("Button remove News")
             .locatedBy("//span[text()='Remove']");
+    public static final Target LBL_SLUG = Target.the("Label slug")
+            .locatedBy("//label[text()='Slug']//ancestor::div[contains(@class,'title col-12')]");
 }

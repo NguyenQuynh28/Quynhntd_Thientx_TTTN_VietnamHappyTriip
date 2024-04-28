@@ -10,13 +10,13 @@ import ui.PassengerPage;
 
 public class CountRoute implements Question<Boolean> {
     private String codeOfTicket;
-    private String value;
-    public CountRoute(String codeOfTicket, String value){
+//    private String value;
+    public CountRoute(String codeOfTicket){
         this.codeOfTicket = codeOfTicket;
-        this.value = value;
+//        this.value = value;
     }
-    public static CountRoute countRoute(String codeOfTicket, String value) {
-        return new CountRoute(codeOfTicket, value);
+    public static CountRoute countRoute(String codeOfTicket) {
+        return new CountRoute(codeOfTicket);
     }
 
     @Override
@@ -41,9 +41,16 @@ public class CountRoute implements Question<Boolean> {
             int routeCountOnPage = PassengerPage.LBL_ROUTE.resolveAllFor(actor).size();
             totalRouteCount = totalRouteCount + routeCountOnPage;
 
-            if (Text.of(AdminPage.TXT_NUMBER_OF_PAGES).answeredBy(actor).contains(value)) {
+//            if (Text.of(AdminPage.TXT_NUMBER_OF_PAGES).answeredBy(actor).contains(value)) {
+//                break;
+//            } else {
+//                actor.attemptsTo(
+//                        Click.on(AdminPage.BTN_CHANGE_PAGES)
+//                );
+//            }
+            if (AdminPage.BTN_CHANGE_PAGES.resolveFor(actor).isDisabled()){
                 break;
-            } else {
+            }else {
                 actor.attemptsTo(
                         Click.on(AdminPage.BTN_CHANGE_PAGES)
                 );

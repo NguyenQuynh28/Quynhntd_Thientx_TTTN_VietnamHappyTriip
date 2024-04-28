@@ -1,16 +1,19 @@
 package tests.partner;
 
+import helpers.TakeScreenshot;
 import model.DataTest;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import questions.CompareImage;
 import tasks.Actions;
 import tasks.Login;
 import tasks.partner.PartnerNavbarNavigate;
@@ -113,6 +116,26 @@ public class PartnerNewsManagementTest extends CommonTest {
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PartnerPage.MESSAGE_DUPLICATE_ENTRY)).isEqualTo("ER_DUP_ENTRY")
+        );
+    }
+
+    @Test
+    @Tag("Partner_Test169")
+    @Title("Partner_Test169: update system Slug")
+    public void partner_test169() {
+        //Logged in successfully to the partner page
+        givenThat(client).attemptsTo(Login.toPartnerPage());
+
+        //Navigate to Add News page and the "Title" field matches an existing username
+        when(client).attemptsTo(
+                PartnerNavbarNavigate.toNewsManagement(),
+                PartnerNewsManagement.toAddNews(),
+                TakeScreenshot.ofElement(PartnerPage.LBL_SLUG, "slugBeforeImg"),
+                Click.on(PartnerPage.BTN_SAVE),
+                Scroll.to(PartnerPage.LBL_SLUG),
+                TakeScreenshot.ofElement(PartnerPage.LBL_SLUG, "slugAfterImg"));
+        then(client).attemptsTo(
+                Ensure.that(CompareImage.imgProfilePartner("slugBeforeImg", "slugAfterImg")).isTrue()
         );
     }
 

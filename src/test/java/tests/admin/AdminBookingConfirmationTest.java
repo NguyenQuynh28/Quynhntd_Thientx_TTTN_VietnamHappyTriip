@@ -222,7 +222,8 @@ public class AdminBookingConfirmationTest extends CommonTest {
                 AdminNavbarNavigate.toBookingConfirmation()
         );
         then(admin).should(
-                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("1OvKFzH7", "Showing 31 to 36"))
+//                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("1OvKFzH7", "Showing 31 to 36"))
+                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("1OvKFzH7"))
         );
     }
 }
