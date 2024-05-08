@@ -6,6 +6,7 @@ import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
@@ -17,6 +18,7 @@ import tasks.partner.PartnerNavbarNavigate;
 import tasks.partner.PartnerNewsManagement;
 import tests.CommonTest;
 import ui.PartnerPage;
+import untils.WaitABit;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -112,6 +114,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE_NEWS)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_DUPLICATE_ENTRY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_DUPLICATE_ENTRY)).isEqualTo("ER_DUP_ENTRY")
         );
     }
@@ -189,6 +192,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE_NEWS)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("News is created successfully")
         );
     }
@@ -231,7 +235,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE_NEWS)
         );
         then(client).attemptsTo(
-                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("News is created successfully")
         );
         and(client).attemptsTo(
@@ -308,6 +312,7 @@ public class PartnerNewsManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE_NEWS)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_DUPLICATE_ENTRY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_DUPLICATE_ENTRY)).isEqualTo("ER_DUP_ENTRY")
         );
     }
@@ -322,8 +327,8 @@ public class PartnerNewsManagementTest extends CommonTest {
         //Navigate to Add News page, click any News in the listbox and update the "Title" field with valid information
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
-                Click.on(PartnerPage.LBL_NEWS.of("Trippp")),
-                PartnerNewsManagement.inputTitle("Vietnam triip"),
+                Click.on(PartnerPage.LBL_NEWS.of("Vietnam triip")),
+                PartnerNewsManagement.inputTitle("Trippp"),
                 Click.on(PartnerPage.BTN_SAVE_NEWS)
         );
         then(client).attemptsTo(
@@ -432,7 +437,13 @@ public class PartnerNewsManagementTest extends CommonTest {
         //Navigate to News Management page, click any News in the listbox and delete News
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
-                Click.on(PartnerPage.LBL_NEWS.of("Vietnam Happy triip")),
+                PartnerNewsManagement.toAddNews(),
+                PartnerNewsManagement.inputTitle("Happytriiip"),
+                PartnerNewsManagement.inputDescription("Happytriiip"),
+                PartnerNewsManagement.importImage("HoiAn", ".png"),
+                Click.on(PartnerPage.BTN_SAVE_NEWS),
+                WaitABit.inSecond(5),
+                Click.on(PartnerPage.LBL_NEWS.of("Happytriiip")),
                 Click.on(PartnerPage.BTN_REMOVE_NEWS)
         );
         then(client).attemptsTo(

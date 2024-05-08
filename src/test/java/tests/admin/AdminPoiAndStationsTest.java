@@ -22,6 +22,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("AdminPoiAndStationsTest")
 public class AdminPoiAndStationsTest extends CommonTest {
 
     @Test

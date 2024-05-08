@@ -285,7 +285,7 @@ public class PartnerManagementTest extends CommonTest {
                 PartnerNavbarNavigate.toPartnerManagement(),
                 PartnerTransportManagement.inputNamePartner("Partner 35"),
                 PartnerTransportManagement.inputTaxCodePartner(DataTest.taxCode),
-                PartnerTransportManagement.inputAddressPartner(DataTest.over100char),
+                PartnerTransportManagement.inputAddressPartner(DataTest.over100Char),
                 PartnerTransportManagement.inputEmailPartner("partner33@gmail.com"),
                 PartnerTransportManagement.inputPhoneNumberPartner(DataTest.phoneNumber),
                 PartnerTransportManagement.inputTitlePartner("partner35"),

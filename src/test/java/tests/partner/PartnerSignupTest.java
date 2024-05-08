@@ -468,12 +468,12 @@ public class PartnerSignupTest extends CommonTest {
 
         //Fill in all fields with valid information
         when(client).attemptsTo(
-                SignupInfo.inputName("partner1000"),
-                SignupInfo.inputEmail("partner1000@gmail.com"),
+                SignupInfo.inputName("partner10000"),
+                SignupInfo.inputEmail("partner10000@gmail.com"),
                 SignupInfo.inputPhoneNumber("123456789"),
-                SignupInfo.inputUserName("partner1000"),
-                SignupInfo.inputPassword("Partner1000@"),
-                SignupInfo.inputConfirmPassword("Partner1000@"),
+                SignupInfo.inputUserName("partner10000"),
+                SignupInfo.inputPassword("Partner10000@"),
+                SignupInfo.inputConfirmPassword("Partner10000@"),
                 Click.on(SignupPage.BTN_SIGNUP)
         );
         then(client).attemptsTo(

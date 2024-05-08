@@ -1,5 +1,6 @@
 package tests.passenger;
 
+import model.DataTest;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Click;
@@ -38,7 +39,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 Click.on(PassengerPage.DRP_CHOOSE_ADDRESS.of("From")),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -57,7 +58,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 Click.on(PassengerPage.DRP_CHOOSE_ADDRESS.of("To")),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -115,7 +116,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -133,7 +134,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Ngãi"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -142,7 +143,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
 
     @Test
     @Tag("Passenger_Test35")
-    @Title("Passenger_Test35: The ticket not available message is displayed when selecting a form that has not been created")
+    @Title("Passenger_Test35: The ticket not available message is displayed when selecting a from that has not been created")
     public void Passenger_test35() {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
@@ -150,7 +151,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Thừa Thiên Huế"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -167,7 +168,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Bà Rịa - Vũng Tàu"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -184,7 +185,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 Click.on(PassengerPage.BTN_VIEW_DETAIL.of("Đà Nẵng - Hội An"))
         );
@@ -202,7 +203,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 Click.on(PassengerPage.BTN_VIEW_DETAIL.of("Đà Nẵng - Hội An")),
                 Click.on(PassengerPage.BTN_HIDE_DETAIL.of("Đà Nẵng - Hội An"))
@@ -221,7 +222,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An")
         );
@@ -239,11 +240,11 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An")
                         .then(
-                                PassengerBookingHistory.chooseSeatAndCheckout("B1")
+                                PassengerBookingHistory.chooseSeatAndCheckout("A1")
                         )
 
         );
@@ -261,10 +262,10 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("B2")
+                PassengerBookingHistory.chooseSeatAndCheckout("A2")
                         .then(
                                 Click.on(PassengerPage.BTN_CASH)
                         )
@@ -284,10 +285,10 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("B2")
+                PassengerBookingHistory.chooseSeatAndCheckout("A3")
                         .then(
                                 Click.on(PassengerPage.BTN_CREDIT_AND_DEBIT_CARD)
                         )
@@ -321,8 +322,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         givenThat(client).attemptsTo(Login.toPassengerPage());
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toBookingHistory(),
-                PassengerBookingHistory.searchTicket("tRI31G")
-
+                PassengerBookingHistory.searchTicket("tRI31Gaaaaaa")
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PassengerPage.MESSAGE_NO_BOOKING_HISTORY)).isEqualTo("No booking histories found.")
@@ -337,7 +337,6 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toBookingHistory(),
                 PassengerBookingHistory.searchTicket("NPU9P6L8")
-
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PassengerPage.TXT_CODE.of("NPU9P6L8"))).isEqualTo("NPU9P6L8")
