@@ -15,9 +15,9 @@ public class AdminPage {
     public static final Target TITLE_BOOKING_CONFIRMATION = Target.the("Title booking confirmation")
             .locatedBy("//div[@class='booking-confirmation']//h2");
     public static final Target BTN_CONFIRM_BOOKING = Target.the("Button booking confirmation")
-            .locatedBy("//td[text()=' {0} ']//ancestor::tr//p-button[@label='Confirm']");
+            .locatedBy("(//p-button[@label='Confirm'])[1]");
     public static final Target BTN_CANCEL_BOOKING = Target.the("Button booking cancel")
-            .locatedBy("//td[text()=' {0} ']//ancestor::tr//p-button[@label='Cancel']");
+            .locatedBy("(//p-button[@label='Cancel'])[1]");
     public static final Target BTN_RECONFIRM_BOOKING = Target.the("Button booking reconfirmation")
             .locatedBy("//button[contains(@class,'{0}')]");
     public static final Target TXT_MESSAGE_BOOKING_CONFIRMATION = Target.the("Message displayed on popup")
