@@ -4,6 +4,7 @@ import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.Text;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -52,7 +53,7 @@ public class AdminBookingConfirmationTest extends CommonTest {
         //1.Navigate to Booking Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.confirmInfoBooking("XoUOsDIj")
+                AdminBookingConfirm.confirmInfoBooking()
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.TXT_MESSAGE_BOOKING_CONFIRMATION)).isEqualTo("Are you sure that you want to accept this booking?")
@@ -66,7 +67,7 @@ public class AdminBookingConfirmationTest extends CommonTest {
         givenThat(admin).attemptsTo(Login.toAdminPage());
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.confirmInfoBooking("Jj1lGDfV"),
+                AdminBookingConfirm.confirmInfoBooking(),
                 AdminBookingConfirm.reconfirmInfoBooking("accept")
         );
         then(admin).attemptsTo(
@@ -81,7 +82,7 @@ public class AdminBookingConfirmationTest extends CommonTest {
         givenThat(admin).attemptsTo(Login.toAdminPage());
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.confirmInfoBooking("nHNxm7TJ"),
+                AdminBookingConfirm.confirmInfoBooking(),
                 AdminBookingConfirm.reconfirmInfoBooking("reject")
         );
         then(admin).attemptsTo(
@@ -102,7 +103,7 @@ public class AdminBookingConfirmationTest extends CommonTest {
         //1.Navigate to Booking Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.denyInfoBooking("XoUOsDIj")
+                AdminBookingConfirm.denyInfoBooking()
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.TXT_MESSAGE_BOOKING_CONFIRMATION)).isEqualTo("Are you sure that you want to deny this booking?")
@@ -116,10 +117,11 @@ public class AdminBookingConfirmationTest extends CommonTest {
         givenThat(admin).attemptsTo(Login.toAdminPage());
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.denyInfoBooking("XoUOsDIj"),
+                AdminBookingConfirm.denyInfoBooking(),
                 AdminBookingConfirm.reconfirmInfoBooking("accept")
         );
         then(admin).attemptsTo(
+                WaitUntil.the(AdminPage.MESSAGE_SUCCESSFULLY, isVisible()).forNoMoreThan(30).seconds(),
                 Ensure.that(Text.of(AdminPage.MESSAGE_SUCCESSFULLY)).isEqualTo("This booking is denied successfully!")
         );
     }
@@ -131,7 +133,7 @@ public class AdminBookingConfirmationTest extends CommonTest {
         givenThat(admin).attemptsTo(Login.toAdminPage());
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.denyInfoBooking("nHNxm7TJ"),
+                AdminBookingConfirm.denyInfoBooking(),
                 AdminBookingConfirm.reconfirmInfoBooking("reject")
         );
         then(admin).attemptsTo(
@@ -152,7 +154,7 @@ public class AdminBookingConfirmationTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.searchNamePassengers("Thien1234")
+                AdminBookingConfirm.searchNamePassengers("Thien12345")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.MESSAGE_NO_RESULTS)).isEqualTo("No bookings found.")
@@ -169,7 +171,7 @@ public class AdminBookingConfirmationTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.searchCode("tT5fZd")
+                AdminBookingConfirm.searchCode("tU5SJaCqffffff")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.MESSAGE_NO_RESULTS)).isEqualTo("No bookings found.")
@@ -203,10 +205,10 @@ public class AdminBookingConfirmationTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation(),
-                AdminBookingConfirm.searchCode("XoUOsDIj")
+                AdminBookingConfirm.searchCode("nHNxm7TJ")
         );
         then(admin).attemptsTo(
-                Ensure.that(AdminPage.LBL_CODE.of("XoUOsDIj")).isDisplayed()
+                Ensure.that(AdminPage.LBL_CODE.of("nHNxm7TJ")).isDisplayed()
         );
     }
 

@@ -10,9 +10,9 @@ import ui.AdminPage;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class AdminBookingConfirm {
-    public static Performable confirmInfoBooking(String value) {
+    public static Performable confirmInfoBooking() {
         return Task.where("Confirm Route",
-                Click.on(AdminPage.BTN_CONFIRM_BOOKING.of(value))
+                Click.on(AdminPage.BTN_CONFIRM_BOOKING)
         );
     }
 
@@ -22,10 +22,11 @@ public class AdminBookingConfirm {
         );
     }
 
-    public static Performable denyInfoBooking(String value) {
+    public static Performable denyInfoBooking() {
         return Task.where("Confirm Route",
-                Click.on(AdminPage.BTN_CANCEL_BOOKING.of(value))
+                Click.on(AdminPage.BTN_CANCEL_BOOKING)
         );
+
     }
 
     public static Performable searchNamePassengers(String value) {
