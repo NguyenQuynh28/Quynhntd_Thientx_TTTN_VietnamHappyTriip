@@ -26,6 +26,8 @@ public class AdminPage {
             .locatedBy("//span[text()='{0}']");
     public static final Target LBL_CODE = Target.the("Label code")
             .locatedBy("//td[text()=' {0} ']");
+    public static final Target BTN_CONFIRM = Target.the("Button confirm")
+            .locatedBy("(//p-button[@label='Confirm'])[1]");
     public static Target OPTION_BOOKING_IN_LIST(String name) {
         return Target.the("Option booking in list")
                 .locatedBy("//span[contains(text(),'" + name + "')]//ancestor::tr//p-button[@label='Confirm']//ancestor::tr");
@@ -89,14 +91,16 @@ public class AdminPage {
     //Sales report
     public static final Target NAV_BTN_SALES_REPORT = Target.the("Button navigate to sales report")
             .locatedBy("//div[@aria-label='Sales Report']");
-    public static final Target TABLE_REVENUE_OF_MONTH = Target.the("Table revenue of month")
-            .locatedBy("//p-tabpanel[@header='Revenue of month']//canvas");
-    public static final Target TABLE_REVENUE_OF_YEAR = Target.the("Table revenue of year")
-            .locatedBy("//p-tabpanel[@header='Revenue of year']//canvas");
-    public static final Target BTN_TAB_OF_MONTH = Target.the("TButton tab revenue of month")
+    public static final Target BTN_TAB_OF_MONTH = Target.the("Button tab revenue of month")
             .locatedBy("//span[text()='Revenue of month']");
     public static final Target BTN_TAB_OF_YEAR = Target.the("Button tab revenue of year")
             .locatedBy("//span[text()='Revenue of year']");
+    public static final Target BTN_CHOOSE_TIME = Target.the("Button choose time")
+            .locatedBy("//p-calendar[@view='{0}']");
+    public static final Target LTB_CHOOSE_TIME = Target.the("Lable choose time")
+            .locatedBy("//span[text()=' {0} ']");
+    public static final Target TABLE_REVENUE = Target.the("Table revenue")
+            .locatedBy("//p-tabpanel[@header='{0}']");
 
     //POI & Station
     public static final Target NAV_BTN_POI_STATIONS = Target.the("Button navigate to POI & stations")
