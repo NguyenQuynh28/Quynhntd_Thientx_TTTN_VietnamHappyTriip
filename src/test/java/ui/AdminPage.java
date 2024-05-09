@@ -9,6 +9,7 @@ public class AdminPage {
     public static final Target ERROR_MESSAGE = Target.the("Error message")
             .locatedBy("//label[text()='{0}']//parent::div//strong");
 
+
     //Booking Confirmation
     public static final Target NAV_BTN_BOOKING_CONFIRMATION = Target.the("Button navigate to booking confirmation")
             .locatedBy("//div[@aria-label='Booking Confirmation']");

@@ -26,6 +26,7 @@ public class AdminBookingConfirm {
         return Task.where("Confirm Route",
                 Click.on(AdminPage.BTN_CANCEL_BOOKING)
         );
+
     }
 
     public static Performable searchNamePassengers(String value) {
