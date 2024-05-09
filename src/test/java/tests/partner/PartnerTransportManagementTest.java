@@ -6,6 +6,7 @@ import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
@@ -222,7 +223,7 @@ public class PartnerTransportManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
-                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is created successfully")
         );
     }
@@ -271,7 +272,7 @@ public class PartnerTransportManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
-                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is created successfully")
         );
     }
@@ -383,7 +384,7 @@ public class PartnerTransportManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
-                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is updated successfully")
         );
     }
@@ -411,7 +412,7 @@ public class PartnerTransportManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
-                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, isVisible()),
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Transport is updated successfully")
         );
     }
