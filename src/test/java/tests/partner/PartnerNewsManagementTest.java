@@ -350,8 +350,8 @@ public class PartnerNewsManagementTest extends CommonTest {
         //Navigate to Add News page, click any News in the listbox and update the "Title" field with valid information
         when(client).attemptsTo(
                 PartnerNavbarNavigate.toNewsManagement(),
-                Click.on(PartnerPage.LBL_NEWS.of("Vietnam triip")),
-                PartnerNewsManagement.inputTitle("Trippp"),
+                Click.on(PartnerPage.LBL_NEWS.of("Trippp")),
+                PartnerNewsManagement.inputTitle("Vietnam triip"),
                 Click.on(PartnerPage.BTN_SAVE_NEWS)
         );
         then(client).attemptsTo(
