@@ -1,5 +1,6 @@
 package tests.passenger;
 
+import helpers.DateTimeHelper;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Click;
@@ -8,10 +9,9 @@ import net.serenitybdd.screenplay.questions.Text;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import questions.CountRoute;
-import tasks.ChangePage;
 import tasks.Login;
 import tasks.passenger.PassengerBookingHistory;
+import tasks.passenger.PassengerCountTicket;
 import tasks.passenger.PassengerNavbarNavigate;
 import tests.CommonTest;
 import ui.PassengerPage;
@@ -38,7 +38,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 Click.on(PassengerPage.DRP_CHOOSE_ADDRESS.of("From")),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -57,7 +57,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 Click.on(PassengerPage.DRP_CHOOSE_ADDRESS.of("To")),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -115,7 +115,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -133,7 +133,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Ngãi"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -150,7 +150,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Thừa Thiên Huế"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -167,7 +167,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Bà Rịa - Vũng Tàu"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
@@ -184,7 +184,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket(),
                 Click.on(PassengerPage.BTN_VIEW_DETAIL.of("Đà Nẵng - Hội An"))
         );
@@ -202,7 +202,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket(),
                 Click.on(PassengerPage.BTN_VIEW_DETAIL.of("Đà Nẵng - Hội An")),
                 Click.on(PassengerPage.BTN_HIDE_DETAIL.of("Đà Nẵng - Hội An"))
@@ -221,7 +221,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An")
         );
@@ -239,7 +239,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An")
                         .then(
@@ -261,7 +261,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
                 PassengerBookingHistory.chooseSeatAndCheckout("B2")
@@ -284,7 +284,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("21-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
                 PassengerBookingHistory.chooseSeatAndCheckout("B2")
@@ -352,8 +352,13 @@ public class PassengerBookingHistoryTest extends CommonTest {
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toBookingHistory()
         );
-        then(client).should(
-                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("codeOfTicket", "Showing 46 to 50"))
+        andThat(client).attemptsTo(
+                PassengerBookingHistory.filterStatus("Success"),
+                Click.on(PassengerPage.BTN_CLEAR)
+        );
+        //Verify the display of all information
+        then(client).attemptsTo(
+                Ensure.that(PassengerCountTicket.countTicket()).isTrue()
         );
     }
 
@@ -365,24 +370,27 @@ public class PassengerBookingHistoryTest extends CommonTest {
     @Title("Passenger_Test47: Check status MONEYPENDING")
     public void Passenger_test47() {
         //Logged in successfully to the login page
-        givenThat(client).attemptsTo(Login.toPassengerPage());
-
+        givenThat(client).attemptsTo(
+                Login.toPassengerPage());
         when(client).attemptsTo(
                 PassengerBookingHistory.selectFrom("Đà Nẵng"),
                 PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-04-2024"),
+                PassengerBookingHistory.inputDepartDate("20-" + DateTimeHelper.getCurrentMonthAndYear()),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("B2"),
+                PassengerBookingHistory.chooseSeatAndCheckout("A2"),
                 Click.on(PassengerPage.BTN_CASH),
                 WaitABit.inSecond(3)
         );
-        and(client).attemptsTo(
-                PassengerNavbarNavigate.toBookingHistory(),
-                ChangePage.change("BFeDcpCG", 20, "MONEYPENDING", "BFeDcpCG")
+        andThat(client).attemptsTo(
+                PassengerNavbarNavigate.toBookingHistory()
+        );
+        andThat(client).attemptsTo(
+                PassengerBookingHistory.filterStatus("Money Pending"),
+                Click.on(PassengerPage.TXT_FIRST_TAG)
         );
         then(client).attemptsTo(
-                Ensure.that(Text.of(PassengerPage.TXT_TAG.of("BFeDcpCG"))).isEqualTo("MONEYPENDING")
+                Ensure.that(PassengerPage.TXT_STATUS.of("MONEYPENDING")).isDisplayed()
         );
     }
 
@@ -393,13 +401,15 @@ public class PassengerBookingHistoryTest extends CommonTest {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPassengerPage());
         when(client).attemptsTo(
-                PassengerNavbarNavigate.toBookingHistory(),
-                ChangePage.change("pUemNhpp", 20, "SUCCESS", "pUemNhpp")
-
+                PassengerNavbarNavigate.toBookingHistory()
+        );
+        andThat(client).attemptsTo(
+                PassengerBookingHistory.filterStatus("Success"),
+                Click.on(PassengerPage.TXT_FIRST_TAG)
         );
         // Passenger check status
         then(client).attemptsTo(
-                Ensure.that(Text.of(PassengerPage.TXT_TAG.of("pUemNhpp"))).isEqualTo("SUCCESS")
+                Ensure.that(PassengerPage.TXT_STATUS.of("SUCCESS")).isDisplayed()
         );
     }
 
@@ -408,14 +418,17 @@ public class PassengerBookingHistoryTest extends CommonTest {
     @Title("Passenger_Test49: Check status PENDING")
     public void Passenger_test49() {
         //Logged in successfully to the login page
-        givenThat(client).attemptsTo(Login.toPassengerPage());
-
+        givenThat(client).attemptsTo(
+                Login.toPassengerPage());
         when(client).attemptsTo(
-                PassengerNavbarNavigate.toBookingHistory(),
-                ChangePage.change("NPU9P6L8", 20, "PENDING", "NPU9P6L8")
+                PassengerNavbarNavigate.toBookingHistory()
+        );
+        andThat(client).attemptsTo(
+                PassengerBookingHistory.filterStatus("Pending"),
+                Click.on(PassengerPage.TXT_FIRST_TAG)
         );
         then(client).attemptsTo(
-                Ensure.that(Text.of(PassengerPage.TXT_TAG.of("NPU9P6L8"))).isEqualTo("PENDING")
+                Ensure.that(PassengerPage.TXT_STATUS.of("PENDING")).isDisplayed()
         );
     }
 }

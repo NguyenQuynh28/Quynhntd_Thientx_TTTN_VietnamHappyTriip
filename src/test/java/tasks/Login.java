@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.Keys;
 import tasks.partner.SignupPartner;
 import ui.LoginPage;
 import untils.LoadConfig;
@@ -62,8 +63,7 @@ public class Login implements Performable {
             );
         }
         actor.attemptsTo(
-                Click.on(LoginPage.BTN_LOGIN),
-                WaitUntil.the(LoginPage.BTN_LOGGED, isVisible()).forNoMoreThan(120).seconds()
+                Click.on(LoginPage.BTN_LOGIN)
         );
     }
 

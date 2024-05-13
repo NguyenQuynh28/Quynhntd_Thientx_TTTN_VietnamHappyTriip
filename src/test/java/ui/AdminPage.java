@@ -29,10 +29,12 @@ public class AdminPage {
             .locatedBy("//td[text()=' {0} ']");
     public static final Target BTN_CONFIRM = Target.the("Button confirm")
             .locatedBy("(//p-button[@label='Confirm'])[1]");
+
     public static Target OPTION_BOOKING_IN_LIST(String name) {
         return Target.the("Option booking in list")
                 .locatedBy("//span[contains(text(),'" + name + "')]//ancestor::tr//p-button[@label='Confirm']//ancestor::tr");
     }
+
     public static Target BTN_CONFIRM_BOOKING(String name) {
         return Target.the("Button confirm booking")
                 .locatedBy("//span[contains(text(),'" + name + "')]//ancestor::tr//p-button[@label='Confirm']");
@@ -188,8 +190,6 @@ public class AdminPage {
     //Route Management
     public static final Target NAV_BTN_ROUTE_MANAGEMENT = Target.the("Button navigate to route management")
             .locatedBy("//div[@aria-label='Route Management']");
-    public static final Target BTN_CHANGE_PAGES = Target.the("Button change pages")
-            .locatedBy("//button[contains(@class,'p-paginator-next')]");
     public static final Target TXT_ROUTE_DETAILS = Target.the("Message pending route details on popup")
             .locatedBy("(//div[contains(@class,'p-dialog-header')])[1]");
     public static final Target BTN_CONFIRM_ROUTE = Target.the("Button confirm route")
@@ -200,15 +200,8 @@ public class AdminPage {
             .locatedBy("//tr[@class='ng-star-inserted']//td");
     public static final Target LBL_ROUTE_NAME = Target.the("Route name")
             .locatedBy("//td[text()=' {0} ']");
-    public static final Target TXT_NUMBER_OF_PAGES = Target.the("Number of pages")
-            .locatedBy("//span[@class='p-paginator-current ng-star-inserted']");
     public static final Target BTN_RECONFIRM = Target.the("Button reconfirm information")
             .locatedBy("//button[@aria-label='{0}']");
-
-    public static Target LBL_ROUTE(String status, String route) {
-        return Target.the("Label route")
-                .locatedBy(String.format("//span[text()='" + status + "']//ancestor::tr//td[text()=' " + route + " ']"));
-    }
 
     public static Target OPTION_ROUTE_IN_LIST(String status, String name) {
         return Target.the("Option route in list")

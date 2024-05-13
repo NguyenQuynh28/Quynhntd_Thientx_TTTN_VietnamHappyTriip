@@ -8,10 +8,10 @@ import net.serenitybdd.screenplay.questions.Text;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import questions.CountRoute;
 import tasks.Actions;
-import tasks.ChangePage;
 import tasks.Login;
+import tasks.admin.AdminChooseRoute;
+import tasks.admin.AdminCountRoute;
 import tasks.admin.AdminNavbarNavigate;
 import tasks.admin.AdminRouteManagement;
 import tasks.partner.PartnerNavbarNavigate;
@@ -45,12 +45,13 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerTransportManagement.chooseVehicleType("Bus"),
                 PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         // Create Route
         when(client).attemptsTo(
@@ -64,7 +65,8 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
                 PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 12"),
                 PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30"),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
 
         clientBrowser.close();
@@ -74,10 +76,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Quang Nam - Da Nang", 10, "PENDING", "Quang Nam - Da Nang")
-                        .then(
-                                AdminRouteManagement.chooseRoute("PENDING", "Quang Nam - Da Nang")
-                        )
+                AdminChooseRoute.withStatusPending("Quang Nam - Da Nang")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.TXT_ROUTE_DETAILS)).isEqualTo("Pending route details")
@@ -98,12 +97,13 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerTransportManagement.chooseVehicleType("Bus"),
                 PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         // Create Route
         when(client).attemptsTo(
@@ -117,7 +117,8 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
                 PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 13"),
                 PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30"),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
 
         clientBrowser.close();
@@ -127,9 +128,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Da Nang - Thang Binh", 10, "PENDING", "Da Nang - Thang Binh"),
-                //Choose info to confirm
-                AdminRouteManagement.chooseRoute("PENDING", "Da Nang - Thang Binh")
+                AdminChooseRoute.withStatusPending("Da Nang - Thang Binh")
                         .then(
                                 //Choose button Accept
                                 AdminRouteManagement.confirmRoute("Accept")
@@ -139,6 +138,7 @@ public class AdminRouteManagementTest extends CommonTest {
                 Ensure.that(Text.of(AdminPage.TXT_CONFIRM_INFORMATION)).isEqualTo("Are you sure that you want to accept this route?")
         );
     }
+
 
     @Test
     @Tag("Admin_Test93")
@@ -154,12 +154,13 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerTransportManagement.chooseVehicleType("Bus"),
                 PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         // Create Route
         when(client).attemptsTo(
@@ -173,7 +174,8 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
                 PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 14"),
                 PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30"),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         clientBrowser.close();
 
@@ -182,9 +184,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Da Nang - Tam Ky", 10, "PENDING", "Da Nang - Tam Ky"),
-                //Choose info to confirm
-                AdminRouteManagement.chooseRoute("PENDING", "Da Nang - Tam Ky"),
+                AdminChooseRoute.withStatusPending("Da Nang - Tam Ky"),
                 AdminRouteManagement.confirmRoute("Accept")
                         .then(
                                 AdminRouteManagement.reconfirmRoute("No")
@@ -197,7 +197,7 @@ public class AdminRouteManagementTest extends CommonTest {
 
     @Test
     @Tag("Admin_Test94")
-    @Title("Admin_Test94: Confirmation route is success ")
+    @Title("Admin_Test94: Confirmation route is success")
     public void admin_test94() {
         //Logged in successfully to the login page
         givenThat(client).attemptsTo(Login.toPartnerPage());
@@ -209,12 +209,13 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerTransportManagement.chooseVehicleType("Bus"),
                 PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         // Create Route
         when(client).attemptsTo(
@@ -228,7 +229,8 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
                 PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 15"),
                 PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30"),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
 
         clientBrowser.close();
@@ -238,9 +240,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Da Nang - Binh Yen", 10, "PENDING", "Da Nang - Binh Yen"),
-                //Choose info to confirm
-                AdminRouteManagement.chooseRoute("PENDING", "Da Nang - Binh Yen"),
+                AdminChooseRoute.withStatusPending("Da Nang - Binh Yen"),
                 AdminRouteManagement.confirmRoute("Accept")
                         .then(
                                 AdminRouteManagement.reconfirmRoute("Yes")
@@ -265,12 +265,13 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerTransportManagement.chooseVehicleType("Bus"),
                 PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         //Create Route
         and(client).attemptsTo(
@@ -283,8 +284,9 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("fromAt "), PartnerPage.LST_LIST, "Quang Nam Station"),
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
                 PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 16"),
-                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "5"),
-                Click.on(PartnerPage.BTN_SAVE)
+                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30"),
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
 
         clientBrowser.close();
@@ -294,8 +296,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Da Nang - Dien Ban", 10, "PENDING", "Da Nang - Dien Ban"),
-                AdminRouteManagement.chooseRoute("PENDING", "Da Nang - Dien Ban")
+                AdminChooseRoute.withStatusPending("Da Nang - Dien Ban")
                         .then(
                                 AdminRouteManagement.confirmRoute("Deny")
                         )
@@ -319,12 +320,13 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerTransportManagement.chooseVehicleType("Bus"),
                 PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         //Create Route
         and(client).attemptsTo(
@@ -337,8 +339,9 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("fromAt "), PartnerPage.LST_LIST, "Quang Nam Station"),
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
                 PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 17"),
-                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "5"),
-                Click.on(PartnerPage.BTN_SAVE)
+                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30"),
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
 
         clientBrowser.close();
@@ -348,8 +351,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Da Nang - Dien Ngoc", 10, "PENDING", "Da Nang - Dien Ngoc"),
-                AdminRouteManagement.chooseRoute("PENDING", "Da Nang - Dien Ngoc"),
+                AdminChooseRoute.withStatusPending("Da Nang - Dien Ngoc"),
                 AdminRouteManagement.confirmRoute("Deny")
                         .then(
                                 AdminRouteManagement.reconfirmRoute("No")
@@ -374,12 +376,13 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerTransportManagement.chooseVehicleType("Bus"),
                 PartnerTransportManagement.addSeatType("Normal Seat", "Seating at the bottom", "5",
                         "VIP Seat", "The seats are at the bottom and near the window", "10", "5", "5"),
-                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, ".jpg", "BusStopIMG"),
+                Actions.upLoadIMG(PartnerPage.BTN_IMPORT_IMAGE, "BusStopIMG", ".jpg"),
                 Click.on(PartnerPage.CHK_UTILITY.of("Air Conditioner")),
                 Click.on(PartnerPage.CHK_UTILITY.of("Rest Stop")),
                 Click.on(PartnerPage.CHK_UTILITY.of("WiFi")),
                 WaitABit.inSecond(2),
-                Click.on(PartnerPage.BTN_SAVE)
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         //Create Route
         and(client).attemptsTo(
@@ -392,8 +395,9 @@ public class AdminRouteManagementTest extends CommonTest {
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("fromAt "), PartnerPage.LST_LIST, "Quang Nam Station"),
                 PartnerRouteManagement.chooseLocation(PartnerPage.CKL_LOCATION.of("toAt "), PartnerPage.LST_LIST, "Hoi An Station"),
                 PartnerRouteManagement.chooseTransport(PartnerPage.CHK_CHOOSE_TRANSPORT, PartnerPage.LST_LIST, "Bus 18"),
-                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "5"),
-                Click.on(PartnerPage.BTN_SAVE)
+                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30"),
+                Click.on(PartnerPage.BTN_SAVE),
+                WaitABit.inSecond(2)
         );
         clientBrowser.close();
         //Logged in successfully to the login page
@@ -401,8 +405,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Da Nang - Vinh Dien", 10, "PENDING", "Da Nang - Vinh Dien"),
-                AdminRouteManagement.chooseRoute("PENDING", "Da Nang - Vinh Dien"),
+                AdminChooseRoute.withStatusPending("Da Nang - Vinh Dien"),
                 AdminRouteManagement.confirmRoute("Deny")
                         .then(
                                 AdminRouteManagement.reconfirmRoute("Yes")
@@ -427,10 +430,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                ChangePage.change("Da Nang - TanSonNhat", 10, "ACCEPTED", "Da Nang - TanSonNhat")
-                        .then(
-                                AdminRouteManagement.chooseRoute("ACCEPTED", "Da Nang - TanSonNhat")
-                        )
+                AdminChooseRoute.withStatusAccept("Da Nang - TanSonNhat")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.TXT_ROUTE_DETAILS)).isEqualTo("Pending route details")
@@ -447,11 +447,7 @@ public class AdminRouteManagementTest extends CommonTest {
         //1.Navigate to Route Confirmation page
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement(),
-                //Choose button accept
-                ChangePage.change("Quang Nam - Da Nang", 10, "DENIED", "Quang Nam - Da Nang")
-                        .then(
-                                AdminRouteManagement.chooseRoute("DENIED", "Quang Nam - Da Nang")
-                        )
+                AdminChooseRoute.withStatusDeny("Quang Nam - Da Nang")
         );
         then(admin).attemptsTo(
                 Ensure.that(Text.of(AdminPage.TXT_ROUTE_DETAILS)).isEqualTo("Pending route details")
@@ -506,9 +502,8 @@ public class AdminRouteManagementTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toRouteManagement()
         );
-        then(admin).should(
-//                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("AZrowuuM", "Showing 16 to 19"))
-                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("AZrowuuM"))
+        then(admin).attemptsTo(
+                Ensure.that(AdminCountRoute.countRoute("AZrowuuM")).isTrue()
         );
     }
 }

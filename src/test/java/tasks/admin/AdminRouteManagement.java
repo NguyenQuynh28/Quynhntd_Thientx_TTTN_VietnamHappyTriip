@@ -17,12 +17,6 @@ public class AdminRouteManagement {
         );
     }
 
-    public static Performable chooseRoute(String status, String route) {
-        return Task.where("Choose Route",
-                Click.on(AdminPage.LBL_ROUTE(status, route))
-        );
-    }
-
     public static Performable confirmRoute(String value) {
         return Task.where("Confirm Route",
                 Click.on(AdminPage.BTN_CONFIRM_ROUTE.of(value))
@@ -35,18 +29,20 @@ public class AdminRouteManagement {
         );
     }
 
-    public static Performable acceptRoute(){
+    public static Performable acceptRoute() {
         return Task.where("{0} accept route",
                 Click.on(AdminPage.BTN_ACCEPT)
         );
     }
-    public static Performable noAcceptRoute(){
+
+    public static Performable noAcceptRoute() {
         return Task.where("{0} no accept route",
                 AdminPartnerManagement.acceptPartner()
                         .then(Click.on(AdminPage.BTN_NO))
         );
     }
-    public static Performable yesAcceptRoute(){
+
+    public static Performable yesAcceptRoute() {
         return Task.where("{0} yes accept route",
                 AdminRouteManagement.acceptRoute()
                         .then(Click.on(AdminPage.BTN_YES)),

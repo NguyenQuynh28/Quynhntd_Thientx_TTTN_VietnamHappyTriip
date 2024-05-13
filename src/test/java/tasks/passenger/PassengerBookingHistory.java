@@ -1,18 +1,12 @@
 package tasks.passenger;
 
-import helpers.DateTimeHelper;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import tasks.Actions;
-import ui.AdminPage;
-import ui.LoginPage;
 import ui.PassengerPage;
-import untils.WaitABit;
 
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class PassengerBookingHistory {
@@ -63,29 +57,13 @@ public class PassengerBookingHistory {
         );
     }
 
-    public static Performable clickLastTicket(String value) {
-        return Task.where("Passenger search ticker",
-                WaitUntil.the(PassengerPage.BTN_LAST_BOOKING_NOW.of(value), isVisible()).forNoMoreThan(60).seconds(),
-                MoveMouse.to(PassengerPage.BTN_LAST_BOOKING_NOW.of(value)),
-                Click.on(PassengerPage.BTN_LAST_BOOKING_NOW.of(value))
-        );
-    }
-
-    public static Performable bookingSuccess() {
-        return Task.where("Passenger booking success",
-                WaitUntil.the(LoginPage.BTN_LOGGED, isVisible()).forNoMoreThan(120).seconds(),
-                PassengerBookingHistory.selectFrom("Đà Nẵng"),
-                PassengerBookingHistory.selectTo("Quảng Nam"),
-                PassengerBookingHistory.inputDepartDate("30-" + DateTimeHelper.getCurrentMonthAndYear()),
-                PassengerBookingHistory.ClickSearchTicket(),
-                PassengerBookingHistory.clickLastTicket(DateTimeHelper.getTime()),
-                PassengerBookingHistory.chooseSeatAndCheckout("B2"),
-                        WaitUntil.the(PassengerPage.BTN_CASH, isVisible()).forNoMoreThan(120).seconds()
-                        .then(
-                                Click.on(PassengerPage.BTN_CASH)
-                        ),
-                WaitABit.inSecond(10),
-                WaitUntil.the(AdminPage.TOAST_MESSAGE, isVisible()).forNoMoreThan(120).seconds()
+    public static Performable filterStatus(String value) {
+        return Task.where("Passenger filer status",
+                WaitUntil.the(PassengerPage.FILTER_STATUS, isVisible()).forNoMoreThan(20).seconds(),
+                Click.on(PassengerPage.FILTER_STATUS),
+                Click.on(PassengerPage.DRP_STATUS),
+                Click.on(PassengerPage.OPTIONS_STATUS.of(value)),
+                Click.on(PassengerPage.BTN_APPLY)
         );
     }
 }

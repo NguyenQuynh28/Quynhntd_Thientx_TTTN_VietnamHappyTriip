@@ -3,7 +3,8 @@ package tasks.admin;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import ui.AdminPage;
 import untils.WaitABit;
@@ -27,6 +28,10 @@ public class AdminChooseRoute implements Performable {
         return Tasks.instrumented(AdminChooseRoute.class, "ACCEPTED", name);
     }
 
+    public static AdminChooseRoute withStatusDeny(String name) {
+        return Tasks.instrumented(AdminChooseRoute.class, "DENIED", name);
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(WaitABit.inSecond(5));
@@ -37,7 +42,7 @@ public class AdminChooseRoute implements Performable {
                         Click.on(AdminPage.OPTION_ROUTE_IN_LIST(status, name))
                 );
                 break;
-            }else {
+            } else {
                 actor.attemptsTo(Click.on(AdminPage.BTN_NEXT_IN_LIST));
             }
         }

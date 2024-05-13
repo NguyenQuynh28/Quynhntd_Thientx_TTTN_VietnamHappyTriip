@@ -595,9 +595,6 @@ public class PartnerManagementTest extends CommonTest {
         );
     }
 
-    /**
-     * còn verify
-     */
     @Test
     @Tag("Partner_Test79")
     @Title("Partner_Test79: The information does not change after clicking cancel")
@@ -623,10 +620,9 @@ public class PartnerManagementTest extends CommonTest {
                                 TakeScreenshot.ofElement(PartnerPage.TAKE_SCREENSHOT_PARTNER_PROFILE, "partnerProfileAfterIMG")
                         )
         );
-        then(admin).should(
-                seeThat("The image is compared", CompareImage.imgProfilePartner("partnerProfileBeforeIMG", "partnerProfileAfterIMG"))
+        then(admin).attemptsTo(
+                Ensure.that(CompareImage.imgProfilePartner("partnerProfileBeforeIMG", "partnerProfileAfterIMG")).isTrue()
         );
-
     }
 
     @Test
