@@ -14,10 +14,10 @@ import static net.serenitybdd.screenplay.GivenWhenThen.when;
 
 public class CommonTest {
     @Managed(driver = "chrome")
-    protected WebDriver adminBrowser;
+    public WebDriver adminBrowser;
 
     @Managed(driver = "edge")
-    protected WebDriver clientBrowser;
+    public WebDriver clientBrowser;
 
     @CastMember(name = "Admin")
     public Actor admin;
