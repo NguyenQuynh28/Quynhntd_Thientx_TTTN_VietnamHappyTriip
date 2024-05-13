@@ -21,6 +21,7 @@ import ui.AdminPage;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("AdminPartnerManagementTest")
 public class AdminPartnerManagementTest extends CommonTest {
 
     @Test
