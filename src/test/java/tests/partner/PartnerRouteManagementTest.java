@@ -24,6 +24,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 @ExtendWith(SerenityJUnit5Extension.class)
+@Tag("PartnerRouteManagementTest")
 public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test112")

@@ -5,7 +5,9 @@ import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.questions.Text;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -524,15 +526,16 @@ public class AdminProfileSettingsTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee60"),
-                AdminProfileSettings.inputEmailOfUser("employee60@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee60"),
+                AdminProfileSettings.inputNameOfUser("employee600000"),
+                AdminProfileSettings.inputEmailOfUser("employee600000@gmail.com"),
+                AdminProfileSettings.inputUserNameOfUser("employee600000"),
                 AdminProfileSettings.inputPasswordOfUser("1234@Employee"),
                 AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
                 AdminProfileSettings.chooseEmployeeRoleUser("Viewer"),
                 Click.on(AdminPage.BTN_SAVE_USER)
         );
         then(admin).attemptsTo(
+                WaitUntil.the(AdminPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(AdminPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Employee is created successfully")
         );
     }

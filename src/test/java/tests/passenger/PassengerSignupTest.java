@@ -468,10 +468,10 @@ public class PassengerSignupTest extends CommonTest {
 
         // Fill in all fields with valid information
         when(client).attemptsTo(
-                SignupInfo.inputName("Xuan2999"),
-                SignupInfo.inputEmail("xuan2999@gmail.com"),
+                SignupInfo.inputName("Xuan29999"),
+                SignupInfo.inputEmail("xuan29999@gmail.com"),
                 SignupInfo.inputPhoneNumber("0905743128"),
-                SignupInfo.inputUserName("xuan122999"),
+                SignupInfo.inputUserName("xuan1229999"),
                 SignupInfo.inputPassword("12345@Xuan"),
                 SignupInfo.inputConfirmPassword("12345@Xuan"),
                 Click.on(SignupPage.BTN_SIGNUP)
