@@ -65,10 +65,18 @@ public class PassengerPage {
             .locatedBy("//td[@colspan='5']");
     public static final Target TXT_CODE = Target.the("Code of ticket is booked")
             .locatedBy("//td[text()=' {0} ']");
-    public static final Target TXT_TAG = Target.the("Status of booking history")
-            .locatedBy("//td[text()=' {0} ']//ancestor::tr//span[@class='p-tag-value']");
     public static final Target TXT_FIRST_TAG = Target.the("Status of booking history")
             .locatedBy("(//tr[contains(@class, 'p-selectable-row')])[1]//p-tag//span[@class='p-tag-value']");
+    public static final Target FILTER_STATUS = Target.the("Filter status")
+            .locatedBy("//p-columnfilter[@field='status']");
+    public static final Target DRP_STATUS = Target.the("Dropdown status")
+            .locatedBy("//p-dropdown[@placeholder='Any']");
+    public static final Target OPTIONS_STATUS = Target.the("Option status")
+            .locatedBy("//li[@aria-label='{0}']");
+    public static final Target BTN_APPLY = Target.the("Button apply")
+            .locatedBy("//button[contains(@class,'p-element p-button-sm')]");
+    public static final Target TXT_STATUS = Target.the("Text of status")
+            .locatedBy("//div[@class='col-12 md:col-6 lg:col-3']//span[text()='{0}']");
 
     // Passenger Management
     public static final Target NAV_BTN_PASSENGER_MANAGEMENT = Target.the("Navigate to passenger management")
@@ -91,5 +99,9 @@ public class PassengerPage {
             .locatedBy("//p-button[@label='Cancel']");
     public static final Target LBL_ROUTE = Target.the("Label route")
             .locatedBy("//tr[contains(@class,'p-element')]");
+    public static final Target BTN_PAGES_NUMBER = Target.the("Button pages number")
+            .locatedBy("//button[contains(@class,'p-highlight')]");
+    public static final Target TXT_PAGES = Target.the("Text pages")
+            .locatedBy("//span[@class='p-paginator-current ng-star-inserted']");
 }
 

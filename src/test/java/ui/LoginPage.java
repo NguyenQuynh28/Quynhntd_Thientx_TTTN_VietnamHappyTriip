@@ -20,4 +20,6 @@ public class LoginPage {
             .locatedBy("//div[contains(@class,'logged-in')]");
     public static final Target BTN_LOG_OUT = Target.the("Button log out")
             .locatedBy("//li[@aria-label='Log out']");
+    public static final Target BTN_LOAD_HOMEPAGE = Target.the("Button load homepage")
+            .locatedBy("//a[@routerlink='/homepage']");
 }

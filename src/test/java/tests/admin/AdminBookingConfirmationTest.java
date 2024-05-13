@@ -8,9 +8,9 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import questions.CountRoute;
 import tasks.Login;
 import tasks.admin.AdminBookingConfirm;
+import tasks.admin.AdminCountRoute;
 import tasks.admin.AdminNavbarNavigate;
 import tests.CommonTest;
 import ui.AdminPage;
@@ -223,9 +223,8 @@ public class AdminBookingConfirmationTest extends CommonTest {
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toBookingConfirmation()
         );
-        then(admin).should(
-//                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("1OvKFzH7", "Showing 31 to 36"))
-                seeThat("All routes are displayed after clicking the clear button", CountRoute.countRoute("1OvKFzH7"))
+        then(admin).attemptsTo(
+                Ensure.that(AdminCountRoute.countRoute("1OvKFzH7")).isTrue()
         );
     }
 }
