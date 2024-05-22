@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 import tasks.partner.SignupPartner;
 import ui.LoginPage;
 import untils.LoadConfig;
+import untils.WaitABit;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;

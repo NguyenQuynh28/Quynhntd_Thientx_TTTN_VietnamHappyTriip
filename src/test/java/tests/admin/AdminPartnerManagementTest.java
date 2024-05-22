@@ -17,6 +17,7 @@ import tasks.partner.PartnerManagement;
 import tasks.partner.SignupPartner;
 import tests.CommonTest;
 import ui.AdminPage;
+import untils.WaitABit;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
@@ -56,7 +57,10 @@ public class AdminPartnerManagementTest extends CommonTest {
     @Title("Test80: The system displays a popup with the text 'Are you sure that you want to accept this partner?'")
     public void test80(){
         //The system logged in successfully.
-        givenThat(admin).attemptsTo(Login.toAdminPage());
+        givenThat(admin).attemptsTo(
+                WaitABit.inSecond(10),
+                Login.toAdminPage()
+        );
         //Create a partner account then Login to partner Page.
         andThat(client).attemptsTo(
                 SignupPartner.signupSuccess()
