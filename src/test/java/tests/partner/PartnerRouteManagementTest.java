@@ -45,7 +45,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test113")
     @Title("Test113: The system displays the message 'Name is required.'")
-    public void test113() {
+    public void partner_test113() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -61,7 +61,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test114")
     @Title("Test114: The system displays the message 'Name is required.'")
-    public void test114() {
+    public void partner_test114() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -80,7 +80,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test115")
     @Title("Test115: The system displays the message 'Name is invalid'")
-    public void test115() {
+    public void partner_test115() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -99,7 +99,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test116")
     @Title("Test116: The system displays the message 'Price is required.'")
-    public void test116() {
+    public void partner_test116() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -115,7 +115,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test117")
     @Title("Test117: The system displays the message 'Price is required.'")
-    public void test117() {
+    public void partner_test117() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -131,7 +131,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test118")
     @Title("Test118: The system displays the message 'Depart is invalid'")
-    public void test118() {
+    public void partner_test118() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -147,7 +147,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test119")
     @Title("Test119: The system displays the message 'Depart is invalid'")
-    public void test119() {
+    public void partner_test119() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -166,7 +166,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test120")
     @Title("Test120: The system displays the message 'Depart is invalid'")
-    public void test120() {
+    public void partner_test120() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -185,7 +185,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test121")
     @Title("Test118: The system displays the message 'Arrive is invalid'")
-    public void test121() {
+    public void partner_test121() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -201,7 +201,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test122")
     @Title("Test122: The system displays the message 'Arrive is invalid'")
-    public void test122() {
+    public void partner_test122() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -220,7 +220,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test123")
     @Title("Test123: The system displays the message 'Arrive is invalid'")
-    public void test123() {
+    public void partner_test123() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -239,7 +239,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test124")
     @Title("Test124: The system displays the message 'Days is required.'")
-    public void test124() {
+    public void partner_test124() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -255,7 +255,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test125")
     @Title("Test125: The system displays the message 'Days is required.'")
-    public void test125() {
+    public void partner_test125() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -271,7 +271,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test126")
     @Title("Test126: The system displays the message 'From at is required.'")
-    public void test126() {
+    public void partner_test126() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -287,7 +287,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test127")
     @Title("Test127: The system displays the message 'To at is required.'")
-    public void test127() {
+    public void partner_test127() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -303,7 +303,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test128")
     @Title("Test128: The system displays the message 'Transport is required.'")
-    public void test128() {
+    public void partner_test128() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -319,7 +319,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test129")
     @Title("Test129: The system displays the message 'Route is required.'")
-    public void test129() {
+    public void partner_test129() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -335,7 +335,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test130")
     @Title("Test130: The system displays the fields 'Pickup point's address' and 'Pickup point's time.'")
-    public void test130() {
+    public void partner_test130() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -352,7 +352,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test131")
     @Title("Test131: The system not display the fields 'Pickup point's address' and 'Pickup point's time.'")
-    public void test131() {
+    public void partner_test131() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -372,7 +372,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test132")
     @Title("Test132: The system displays the message 'Pickup point's address is required.'")
-    public void test132() {
+    public void partner_test132() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -391,7 +391,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test133")
     @Title("Test133: The system displays the message 'Pickup point's address is required.'")
-    public void test133() {
+    public void partner_test133() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -411,7 +411,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test134")
     @Title("Test134: The system displays the message 'Pickup point's time is required.'")
-    public void test134() {
+    public void partner_test134() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -430,7 +430,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test135")
     @Title("Test135: The system displays the message 'Pickup point's time is required.'")
-    public void test135() {
+    public void partner_test135() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -450,7 +450,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test136")
     @Title("Test136: The system displayed the fields 'Drop of point's address' and 'Drop of point's time.'")
-    public void test136() {
+    public void partner_test136() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -467,7 +467,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test137")
     @Title("Test137: The system not display the fields 'Drop of point's address' and 'Drop of point's time.'")
-    public void test137() {
+    public void partner_test137() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -487,7 +487,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test138")
     @Title("Test138: The system displays the message 'Drop of point's address is required.'")
-    public void test138() {
+    public void partner_test138() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -506,7 +506,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test139")
     @Title("Test139: The system displays the message 'Drop of point's address is required.'")
-    public void test139() {
+    public void partner_test139() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -526,7 +526,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test140")
     @Title("Test140: The system displays the message 'Drop of point's time is required.'")
-    public void test140() {
+    public void partner_test140() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -545,7 +545,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test141")
     @Title("Test141: The system displays the message 'Drop of point's time is required.'")
-    public void test141() {
+    public void partner_test141() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -565,7 +565,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test142")
     @Title("Test142: The Route is successfully created. The system displays the message 'Route is created successfully.")
-    public void test142() {
+    public void partner_test142() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -580,7 +580,7 @@ public class PartnerRouteManagementTest extends CommonTest {
                         "1",
                         "Quang Nam Station",
                         "Da Nang Station",
-                        "30",
+                        "25",
                         "Car 1"
                 )
         );
@@ -628,7 +628,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test145")
     @Title("Test145: The system displays the message 'Name is required.'")
-    public void test145() {
+    public void partner_test145() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -648,7 +648,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test146")
     @Title("Test146: The system displays the message 'Name is required.'")
-    public void test146() {
+    public void partner_test146() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -672,7 +672,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test147")
     @Title("Test147: The system displays the message 'Name is required.'")
-    public void test147() {
+    public void partner_test147() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -698,7 +698,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test148")
     @Title("Test148: The system displays the message 'Price is required.'")
-    public void test148() {
+    public void partner_test148() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -718,7 +718,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test149")
     @Title("Test149: The system displays the message 'Route is updated successfully'")
-    public void test149() {
+    public void partner_test149() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -744,7 +744,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test150")
     @Title("Test150: The system displays the message 'Depart at is required'")
-    public void test150() {
+    public void partner_test150() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -764,7 +764,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test151")
     @Title("Test151: The system displays the message 'Route is updated successfully'")
-    public void test151() {
+    public void partner_test151() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -790,7 +790,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test152")
     @Title("Test152: The system displays the message 'Depart at is required'")
-    public void test152() {
+    public void partner_test152() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -810,7 +810,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test153")
     @Title("Test153: The system displays the message 'Route is updated successfully'")
-    public void test153() {
+    public void partner_test153() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -836,7 +836,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test154")
     @Title("Test154: The system displays the message 'Day at is required'")
-    public void test154() {
+    public void partner_test154() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -856,7 +856,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test155")
     @Title("Test155: The system displays the message 'Route is updated successfully'")
-    public void test155() {
+    public void partner_test155() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -882,7 +882,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test156")
     @Title("Test156: The system displays the message 'From at is required'")
-    public void test156() {
+    public void partner_test156() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -902,7 +902,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test157")
     @Title("Test157: The system displays the message 'Route is updated successfully'")
-    public void test157() {
+    public void partner_test157() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -928,7 +928,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test158")
     @Title("Test158: The system displays the message 'Transport at is required'")
-    public void test158() {
+    public void partner_test158() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -948,7 +948,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test159")
     @Title("Test159: The system displays the message 'Route is updated successfully'")
-    public void test159() {
+    public void partner_test159() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -974,7 +974,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test160")
     @Title("Test160: The system displays the message 'Transport is required'")
-    public void test160() {
+    public void partner_test160() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -994,7 +994,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test161")
     @Title("Test161: The system displays the message 'Route is updated successfully'")
-    public void test161() {
+    public void partner_test161() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -1020,7 +1020,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test162")
     @Title("Test162: The system displays the message 'Route schedules is required'")
-    public void test162() {
+    public void partner_test162() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -1028,7 +1028,7 @@ public class PartnerRouteManagementTest extends CommonTest {
         //2.On the "Add New Route" page, Click button save
         andThat(client).attemptsTo(
                 PartnerRouteManagement.chooseRouteInList("Quang Nam - Da Nang (2)"),
-                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30")
+                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "25")
                         .then(Click.on(PartnerPage.TXT_NAME))
                         .then(Click.on(PartnerPage.BTN_SAVE))
         );
@@ -1041,7 +1041,7 @@ public class PartnerRouteManagementTest extends CommonTest {
     @Test
     @Tag("Partner_Test163")
     @Title("Test163: The system displays the message 'Route is updated successfully'")
-    public void test163() {
+    public void partner_test163() {
         //The system logged in successfully.
         givenThat(client).attemptsTo(Login.toPartnerPage());
         //1.Navigate to Route Management
@@ -1049,11 +1049,11 @@ public class PartnerRouteManagementTest extends CommonTest {
         //2.On the "Add New Route" page, enter valid information into all fields. Click button save
         andThat(client).attemptsTo(
                 PartnerRouteManagement.chooseRouteInList("Quang Nam - Da Nang (2)"),
-                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30")
+                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "25")
         );
         //3.Enter only space characters in the "Name" field.
         andThat(client).attemptsTo(
-                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "30")
+                PartnerRouteManagement.chooseSchedules(PartnerPage.CHK_CHOOSE_SCHEDULES, PartnerPage.CHK_CHOOSE_DAY, "25")
                         .then(Click.on(PartnerPage.TXT_NAME))
                         .then(Click.on(PartnerPage.BTN_SAVE)),
                 WaitUntil.the(PartnerPage.TOAST_MESSAGE, isVisible()).forNoMoreThan(120).seconds()

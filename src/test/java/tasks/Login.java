@@ -49,22 +49,25 @@ public class Login implements Performable {
                                     Click.on(LoginPage.BTN_OPTION_LOGIN.of(auth))
                             )
             );
-        }
-        //Input data to username and password
-        if (information) {
-            actor.attemptsTo(
-                    Enter.theValue(SignupPartner.getUserName()).into(LoginPage.TXT_USER_NAME),
-                    Enter.theValue(SignupPartner.getUserName()).into(LoginPage.TXT_PASSWORD)
-            );
+            if (information) {
+                actor.attemptsTo(
+                        Enter.theValue(SignupPartner.getUserName()).into(LoginPage.TXT_USER_NAME),
+                        Enter.theValue(SignupPartner.getUserName()).into(LoginPage.TXT_PASSWORD)
+                );
+            } else {
+                actor.attemptsTo(
+                        Enter.theValue(LoadConfig.getUserName(auth)).into(LoginPage.TXT_USER_NAME),
+                        Enter.theValue(LoadConfig.getPassword(auth)).into(LoginPage.TXT_PASSWORD)
+                );
+            }
         } else {
+            //Input data to username and password
             actor.attemptsTo(
                     Enter.theValue(LoadConfig.getUserName(auth)).into(LoginPage.TXT_USER_NAME),
                     Enter.theValue(LoadConfig.getPassword(auth)).into(LoginPage.TXT_PASSWORD)
             );
         }
-        actor.attemptsTo(
-                Click.on(LoginPage.BTN_LOGIN)
-        );
+        actor.attemptsTo(Click.on(LoginPage.BTN_LOGIN));
     }
 
     public Login withNewPartner() {

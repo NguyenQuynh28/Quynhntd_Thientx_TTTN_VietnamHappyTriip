@@ -7,7 +7,9 @@ import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.questions.Text;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -117,6 +119,7 @@ public class PartnerManagementTest extends CommonTest {
 
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Profile updated successfully!")
         );
     }
@@ -179,6 +182,7 @@ public class PartnerManagementTest extends CommonTest {
 
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Tax invalid - Mã số thuế không chính xác")
         );
     }
@@ -207,6 +211,7 @@ public class PartnerManagementTest extends CommonTest {
 
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Tax not found - Mã số thuế không tồn tại")
         );
     }
@@ -235,6 +240,7 @@ public class PartnerManagementTest extends CommonTest {
 
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Tax not found - Mã số thuế không tồn tại")
         );
     }
@@ -648,6 +654,7 @@ public class PartnerManagementTest extends CommonTest {
                         )
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PartnerPage.MESSAGE_SUCCESSFULLY)).isEqualTo("Profile updated successfully!")
         );
     }
@@ -684,6 +691,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
@@ -720,6 +728,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
@@ -756,6 +765,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
@@ -792,6 +802,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
@@ -828,6 +839,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
@@ -864,6 +876,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
@@ -900,6 +913,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }
@@ -936,6 +950,7 @@ public class PartnerManagementTest extends CommonTest {
                 Click.on(PartnerPage.BTN_SAVE)
         );
         then(client).attemptsTo(
+                WaitUntil.the(PartnerPage.ERROR_PARTNER_ACCEPTED, WebElementStateMatchers.isVisible()),
                 Ensure.that(PartnerPage.ERROR_PARTNER_ACCEPTED).isDisplayed()
         );
     }

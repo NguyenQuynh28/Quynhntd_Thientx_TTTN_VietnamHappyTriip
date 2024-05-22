@@ -26,7 +26,7 @@ public class AdminPartnerManagementTest extends CommonTest {
 
     @Test
     @Tag("Admin_Test79")
-    @Title("Test79")
+    @Title("Test79: The system displays a popup with the text 'Partner details'")
     public void test79(){
         //The system logged in successfully.
         givenThat(admin).attemptsTo(Login.toAdminPage());
