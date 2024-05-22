@@ -10,7 +10,8 @@ public class DataTest {
     public static String spaceCharacter = "                    ";
     public static String taxCode = "0402118153";
     public static String differentAlphanumeric = "aaaaa";
-    public static String departDate = "20-" + DateTimeHelper.getCurrentMonthAndYear();
+    public static String departDate = "19-" + DateTimeHelper.getCurrentMonthAndYear();
+
     //Utility
     public static String airConditioner = "Air Conditioner";
     public static String almostFull = "Almost Full";

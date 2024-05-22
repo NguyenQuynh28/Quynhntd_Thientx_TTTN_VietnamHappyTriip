@@ -1,12 +1,13 @@
 package tests.passenger;
 
-import helpers.DateTimeHelper;
 import model.DataTest;
 import net.serenitybdd.annotations.Title;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.questions.Text;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -120,6 +121,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_RESULT, WebElementStateMatchers.isVisible()),
                 Ensure.that(PassengerPage.MESSAGE_RESULT).isDisplayed()
         );
     }
@@ -138,6 +140,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_NO_TICKETS, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_NO_TICKETS)).isEqualTo("Sorry, there is no ticket available on this date"));
     }
 
@@ -155,6 +158,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_NO_TICKETS, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_NO_TICKETS)).isEqualTo("Sorry, there is no ticket available on this date"));
     }
 
@@ -172,6 +176,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.ClickSearchTicket()
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_NO_TICKETS, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_NO_TICKETS)).isEqualTo("Sorry, there is no ticket available on this date"));
     }
 
@@ -190,6 +195,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 Click.on(PassengerPage.BTN_VIEW_DETAIL.of("Đà Nẵng - Hội An"))
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_UTILITIES_VEHICLE, WebElementStateMatchers.isVisible()),
                 Ensure.that(PassengerPage.MESSAGE_UTILITIES_VEHICLE).isDisplayed());
     }
 
@@ -227,6 +233,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An")
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_YOUR_BOOKING, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_YOUR_BOOKING)).isEqualTo("Your Booking"));
     }
 
@@ -244,11 +251,12 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An")
                         .then(
-                                PassengerBookingHistory.chooseSeatAndCheckout("A1")
+                                PassengerBookingHistory.chooseSeatAndCheckout("F1")
                         )
 
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_PAYMENT_METHOD, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_PAYMENT_METHOD)).isEqualTo("Payment method"));
     }
 
@@ -265,12 +273,13 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("A2")
+                PassengerBookingHistory.chooseSeatAndCheckout("H2")
                         .then(
                                 Click.on(PassengerPage.BTN_CASH)
                         )
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_SUCCESS, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_SUCCESS)).contains("Booking pending successfully! Please come to the agency to complete the payment.")
         );
     }
@@ -288,12 +297,13 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("A3")
+                PassengerBookingHistory.chooseSeatAndCheckout("H3")
                         .then(
                                 Click.on(PassengerPage.BTN_CREDIT_AND_DEBIT_CARD)
                         )
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_CHOOSE_PAYMENT_METHOD, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_CHOOSE_PAYMENT_METHOD)).contains("Chọn phương thức thanh toán")
         );
     }
@@ -325,6 +335,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.searchTicket("tRI31Gaaaaaa")
         );
         then(client).attemptsTo(
+                WaitUntil.the(PassengerPage.MESSAGE_NO_BOOKING_HISTORY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(PassengerPage.MESSAGE_NO_BOOKING_HISTORY)).isEqualTo("No booking histories found.")
         );
     }
@@ -336,7 +347,8 @@ public class PassengerBookingHistoryTest extends CommonTest {
         givenThat(client).attemptsTo(Login.toPassengerPage());
         when(client).attemptsTo(
                 PassengerNavbarNavigate.toBookingHistory(),
-                PassengerBookingHistory.searchTicket("NPU9P6L8")
+                PassengerBookingHistory.searchTicket("NPU9P6L8"),
+                WaitABit.inSecond(3)
         );
         then(client).attemptsTo(
                 Ensure.that(Text.of(PassengerPage.TXT_CODE.of("NPU9P6L8"))).isEqualTo("NPU9P6L8")
@@ -377,7 +389,7 @@ public class PassengerBookingHistoryTest extends CommonTest {
                 PassengerBookingHistory.inputDepartDate(DataTest.departDate),
                 PassengerBookingHistory.ClickSearchTicket(),
                 PassengerBookingHistory.clickBookingNow("Đà Nẵng - Hội An"),
-                PassengerBookingHistory.chooseSeatAndCheckout("A2"),
+                PassengerBookingHistory.chooseSeatAndCheckout("G1"),
                 Click.on(PassengerPage.BTN_CASH),
                 WaitABit.inSecond(3)
         );

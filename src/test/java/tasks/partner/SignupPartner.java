@@ -37,7 +37,7 @@ public class SignupPartner implements Performable {
     @Override
     public <T extends Actor> void performAs(T actor) {
         Random rand = new Random();
-        int randomNumber = rand.nextInt(900) + 100;
+        int randomNumber = rand.nextInt(9000) + 1000;
         int randomPhoneNumber = rand.nextInt(900000000) + 100000000;
         String data = "Tester" + randomNumber;
         actor.attemptsTo(

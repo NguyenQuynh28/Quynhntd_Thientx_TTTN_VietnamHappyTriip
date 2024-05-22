@@ -13,11 +13,16 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import tasks.Actions;
 import tasks.Login;
+import tasks.Signup;
+import tasks.SignupInfo;
 import tasks.admin.AdminNavbarNavigate;
 import tasks.admin.AdminProfileSettings;
 import tests.CommonTest;
 import ui.AdminPage;
+import ui.SignupPage;
 import untils.WaitABit;
+
+import java.util.Random;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
@@ -28,6 +33,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test13")
     @Title("Admin_Test13: The title Add New User is displayed")
     public void admin_test13() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -45,6 +51,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test14")
     @Title("Admin_Test14: Error [Name is required] is displayed")
     public void admin_test14() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -63,6 +70,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test15")
     @Title("Admin_Test15: Error [Name is required] is displayed")
     public void admin_test15() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -81,6 +89,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test16")
     @Title("Admin_Test16: Error [Name is invalid] is displayed")
     public void admin_test16() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -99,6 +108,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test17")
     @Title("Admin_Test17: Error [Email is required] is displayed")
     public void admin_test17() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -117,6 +127,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test18")
     @Title("Admin_Test18: Error [Email must be a valid email] is displayed")
     public void admin_test18() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -141,6 +152,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test19")
     @Title("Admin_Test19: Error [Email must be a valid email] is displayed")
     public void admin_test19() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -165,6 +177,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test20")
     @Title("Admin_Test20: Error [Email must be a valid email] is displayed")
     public void admin_test20() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -189,6 +202,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test21")
     @Title("Admin_Test21: Error [Username is required] is displayed")
     public void admin_test21() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -207,6 +221,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test22")
     @Title("Admin_Test22: Error [Username is required] is displayed")
     public void admin_test22() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -225,6 +240,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test23")
     @Title("Admin_Test23: Error [Username is invalid] is displayed")
     public void admin_test23() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -243,6 +259,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test24")
     @Title("Admin_Test24: Message [Duplicate entry] is displayed")
     public void admin_test24() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -259,6 +276,7 @@ public class AdminProfileSettingsTest extends CommonTest {
                 Click.on(AdminPage.BTN_SAVE_USER)
         );
         then(admin).attemptsTo(
+                WaitUntil.the(AdminPage.MESSAGE_DUPLICATE_ENTRY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(AdminPage.MESSAGE_DUPLICATE_ENTRY)).contains("Duplicate entry")
         );
     }
@@ -267,6 +285,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test25")
     @Title("Admin_Test25: Error [Password is required] is displayed")
     public void admin_test25() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -285,6 +304,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test26")
     @Title("Admin_Test26: Error [Password is required] is displayed")
     public void admin_test26() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -303,6 +323,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test27")
     @Title("Admin_Test27: Error [Password is invalid] is displayed")
     public void admin_test27() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -321,6 +342,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test28")
     @Title("Admin_Test28: Error [Password is invalid] is displayed")
     public void admin_test28() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -339,6 +361,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test29")
     @Title("Admin_Test29: Error [Password is invalid] is displayed")
     public void admin_test29() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -357,6 +380,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test30")
     @Title("Admin_Test30: Error [Password is invalid] is displayed")
     public void admin_test30() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -375,6 +399,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test31")
     @Title("Admin_Test31: Error [Password is invalid] is displayed")
     public void admin_test31() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -393,6 +418,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test32")
     @Title("Admin_Test32: Error [Password is invalid] is displayed")
     public void admin_test32() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -411,6 +437,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test33")
     @Title("Admin_Test33: Error [Phone number is required] is displayed")
     public void admin_test33() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -429,6 +456,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test34")
     @Title("Admin_Test34: Error [Phone number is required] is displayed")
     public void admin_test34() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -447,6 +475,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test35")
     @Title("Admin_Test35: Error [Phone number is invalid] is displayed")
     public void admin_test35() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -465,6 +494,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test36")
     @Title("Admin_Test36: Error [Phone number is invalid] is displayed")
     public void admin_test36() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -483,6 +513,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test37")
     @Title("Admin_Test37: Error [Phone number is invalid] is displayed")
     public void admin_test37() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -501,6 +532,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test38")
     @Title("Admin_Test38: Error [Employee role is required] is displayed")
     public void admin_test38() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -519,16 +551,20 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test39")
     @Title("Admin_Test39: Message [Employee is created successfully] is displayed")
     public void admin_test39() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
         //Navigate to Add new User page and fill in all fields with valid information
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(9000) + 1000;
+        String data = "employee" + randomNumber;
         when(admin).attemptsTo(
                 AdminNavbarNavigate.toProfileSettings(),
                 AdminProfileSettings.toAddNewUser(),
-                AdminProfileSettings.inputNameOfUser("employee600000"),
-                AdminProfileSettings.inputEmailOfUser("employee600000@gmail.com"),
-                AdminProfileSettings.inputUserNameOfUser("employee600000"),
+                AdminProfileSettings.inputNameOfUser(data),
+                AdminProfileSettings.inputEmailOfUser(data + "@gmail.com"),
+                AdminProfileSettings.inputUserNameOfUser(data),
                 AdminProfileSettings.inputPasswordOfUser("1234@Employee"),
                 AdminProfileSettings.inputPhoneNumberOfUser("0453768431"),
                 AdminProfileSettings.chooseEmployeeRoleUser("Viewer"),
@@ -544,6 +580,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test40")
     @Title("Admin_Test40: The [Add New User] page is no longer displayed.")
     public void admin_test40() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -562,6 +599,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test41")
     @Title("Admin_Test41: Message [No bookings found.] is displayed")
     public void admin_test41() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -579,6 +617,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test42")
     @Title("Admin_Test42: Display the name of the user to search for.")
     public void admin_test42() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -596,6 +635,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test43")
     @Title("Admin_Test43: Update user information")
     public void admin_test43() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
@@ -608,6 +648,7 @@ public class AdminProfileSettingsTest extends CommonTest {
                 Click.on(AdminPage.BTN_SAVE_USER)
         );
         then(admin).attemptsTo(
+                WaitUntil.the(AdminPage.MESSAGE_SUCCESSFULLY, WebElementStateMatchers.isVisible()),
                 Ensure.that(Text.of(AdminPage.MESSAGE_SUCCESSFULLY)).contains("Employee is updated successfully")
         );
     }
@@ -616,6 +657,7 @@ public class AdminProfileSettingsTest extends CommonTest {
     @Tag("Admin_Test44")
     @Title("Admin_Test44: Update user information")
     public void admin_test44() {
+        clientBrowser.close();
         //Logged in successfully to the login page
         givenThat(admin).attemptsTo(Login.toAdminPage());
 
